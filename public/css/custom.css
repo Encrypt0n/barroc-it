@@ -1,0 +1,16 @@
+.home-header {
+    background-color: #212121;
+
+}
+.header-button {
+    color: #ffd700;
+    border: #ffd700 2px solid;
+    padding: 2px 25px 2px 25px;
+}
+.header-navbar {
+    align-items: center;
+}
+.header-link {
+    color: #FFFFFF;
+    text-decoration: underline;
+}

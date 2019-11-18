@@ -15,7 +15,7 @@
     <title>Barroc Intens</title>
 </head>
 <body>
-    <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
+    <nav class="navbar navbar-expand-md navbar-light home-header">
         <div class="container">
             <a class="navbar-brand" href="{{ url('/') }}">
                 {{ config('app.name', 'Laravel') }}
@@ -31,11 +31,14 @@
                 </ul>
 
                 <!-- Right Side Of Navbar -->
-                <ul class="nav nav-pills">
+                <ul class="nav nav-pills header-navbar">
+                    <li class="nav-item">
+                        <a class="nav-link header-link" href="">Offerte aanvragen</a>
+                    </li>
                     <!-- Authentication Links -->
                     @guest
                         <li class="nav-item">
-                            <a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a>
+                            <a class="nav-link header-button" href="{{ route('login') }}">{{ __('Login') }}</a>
                         </li>
                         @if (Route::has('register'))
                             <li class="nav-item">
