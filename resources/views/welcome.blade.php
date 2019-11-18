@@ -57,32 +57,17 @@
             text-decoration: none;
             text-transform: uppercase;
         }
-
-        .m-b-md {
-            margin-bottom: 30px;
-            transition: 0.1s;
-            animation: fade-in-text 2s ease;
-            animation-fill-mode: both;
-        }
-        @keyframes fade-in-text{
-            0%{
-                transform: rotate(0deg) scale(1) translateX(0);
-                opacity: 0;
-                letter-spacing: 100px;
-            }
-            100% {
-                transform: rotate(0deg) scale(1) translateY(0);
-                opacity: 1;
-                letter-spacing: 0;
-            }
-        }
     </style>
 </head>
 <body>
-<div class="flex-center position-ref full-height">
-    <div class="content">
-        <div class="title m-b-md">
-            Barroc Intens
+<div class="position-ref full-height">
+    <div class="main-content-container">
+        <div class="content-splitter-left">
+            <img class="main-logo" src="{{ asset('storage/img/Logo6_groot.png') }}" alt="logo6_groot">
+        </div>
+        <div class="content-splitter-right">
+            <h1>We are</h1>
+            <h1>Barroc Intens</h1>
         </div>
     </div>
 </div>

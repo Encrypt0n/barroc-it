@@ -1,6 +1,5 @@
 .home-header {
     background-color: #212121;
-
 }
 .header-button {
     color: #ffd700;
@@ -13,4 +12,80 @@
 .header-link {
     color: #FFFFFF;
     text-decoration: underline;
+}
+.header-logo {
+    width: 30%;
+    height: 30%;
+}
+.header-logo-container {
+    padding: 0;
+}
+.main-content-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+}
+.content-splitter-left {
+    width: 50%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.main-logo {
+    transition: 0.1s;
+    animation: fade-in-left 1.5s ease;
+    animation-fill-mode: both;
+}
+.content-splitter-right {
+    font-family: 'Big Shoulders Display';
+    width: 50%;
+    height: 100vh;
+    background-color: #F9F9F9;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    color: #212121;
+}
+.content-splitter-right h1 {
+    padding: 0 5% 0 5%;
+    font-size: 10em;
+    transition: 0.1s;
+    animation: fade-in-right 1.5s ease;
+    animation-fill-mode: both;
+}
+@font-face {
+    font-family: 'Big Shoulders Display';
+    src: url('../storage/fonts/BigShouldersDisplay-Regular.woff2') format('woff2'),
+    url('../storage/fonts/BigShouldersDisplay-Regular.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+/* ================================================================== */
+/*                              animations                            */
+/* ================================================================== */
+.template {
+    transition: 0.1s;
+    animation: fade-in-text 2s ease;
+    animation-fill-mode: both;
+}
+@keyframes fade-in-left{
+    0%{
+        transform: rotate(0deg) scale(1) translateX(-200px);
+        opacity: 0;
+    }
+    100% {
+        transform: rotate(0deg) scale(1) translateX(0);
+        opacity: 1;
+    }
+}
+@keyframes fade-in-right{
+    0%{
+        transform: rotate(0deg) scale(1) translateX(200px);
+        opacity: 0;
+    }
+    100% {
+        transform: rotate(0deg) scale(1) translateX(0);
+        opacity: 1;
+    }
 }
