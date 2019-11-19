@@ -33,7 +33,7 @@
                 <!-- Right Side Of Navbar -->
                 <ul class="nav nav-pills header-navbar">
                     <li class="nav-item">
-                        <a class="nav-link header-link" href="">Offerte aanvragen</a>
+                        <a class="nav-link header-link" href="{{ route('quotationRequest.create') }}">{{ __('Offerte aanvragen') }}</a>
                     </li>
                     <!-- Authentication Links -->
                     @guest
