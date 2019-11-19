@@ -6,12 +6,20 @@
     border: #ffd700 2px solid;
     padding: 2px 25px 2px 25px;
 }
+.header-button:hover {
+    color: #212121;
+    background-color: #ffd700;
+}
 .header-navbar {
     align-items: center;
 }
 .header-link {
     color: #FFFFFF;
     text-decoration: underline;
+}
+.header-link:hover {
+    text-decoration: none;
+    color: #FFFFFF;
 }
 .header-logo {
     width: 30%;
@@ -24,6 +32,7 @@
     display: flex;
     align-items: center;
     justify-content: space-evenly;
+    height: 100vh;
 }
 .content-splitter-left {
     width: 50%;
@@ -34,7 +43,7 @@
 }
 .main-logo {
     transition: 0.1s;
-    animation: fade-in-left 1.5s ease;
+    animation: fade-in-left 1.5s ease 0.5s;
     animation-fill-mode: both;
 }
 .content-splitter-right {
@@ -51,14 +60,100 @@
     padding: 0 5% 0 5%;
     font-size: 10em;
     transition: 0.1s;
-    animation: fade-in-right 1.5s ease;
+    animation: fade-in-right 1.5s ease 0.5s;
     animation-fill-mode: both;
 }
+.product-content-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    height: 100vh;
+}
+.product-splitter-text {
+    font-family: 'Big Shoulders Display';
+    width: 50%;
+    height: 100vh;
+    background-color: #F9F9F9;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: #212121;
+}
+.product-splitter-text p {
+    font-family: 'Roboto';
+    font-size: 2em;
+    font-weight: normal;
+    color: rgba(0,0,0,0.81);
+}
+.product-splitter-text h2 {
+    font-size: 6em;
+}
+.product-splitter-img {
+    width: 50%;
+}
+.highlighted-i {
+    font-family: 'Big Shoulders Display ExtraBold';
+    font-style: italic;
+    margin: 0 18px 0 3px;
+    color: #ffd700;
+}
+.highlighted-dash {
+    font-family: 'Roboto';
+    color: #ffd700;
+}
+.product-splitter-img {
+    width: 50%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.product-img {
+    width: 75%;
+    height: 75%;
+}
+.product-splitter-machines {
+    font-family: 'Roboto';
+    width: 50%;
+    height: 100vh;
+    background-color: #F9F9F9;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: #212121;
+}
+.product-splitter-machines h2 {
+    font-family: 'Big Shoulders Display';
+    font-size: 5em;
+}
+.product-splitter-machines-container {
+    display: flex;
+    justify-content: center;
+}
+.product-splitter-machines-container-horizontal {
+
+}
+.product-splitter-beans {
+    width: 50%;
+    height: 100vh;
+}
+/* ================================================================== */
+/*                              fonts                                 */
+/* ================================================================== */
 @font-face {
     font-family: 'Big Shoulders Display';
     src: url('../storage/fonts/BigShouldersDisplay-Regular.woff2') format('woff2'),
     url('../storage/fonts/BigShouldersDisplay-Regular.woff') format('woff');
     font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'Big Shoulders Display ExtraBold';
+    src: url('../storage/fonts/BigShouldersDisplay-ExtraBold.woff2') format('woff2'),
+    url('../storage/fonts/BigShouldersDisplay-ExtraBold.woff') format('woff');
+    font-weight: 800;
     font-style: normal;
 }
 /* ================================================================== */
@@ -88,4 +183,54 @@
         transform: rotate(0deg) scale(1) translateX(0);
         opacity: 1;
     }
+}
+/* ================================================================== */
+/*                            cookie consent                          */
+/* ================================================================== */
+.js-cookie-consent {
+    font-family: 'Roboto';
+    color: white;
+    position: absolute;
+    top: 0;
+    padding: 10px;
+    text-align: center;
+    width: 100%;
+    height: 65px;
+    z-index: 9999;
+    background-color: #212121;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.js-cookie-consent-agree {
+    color: #ffd700;
+    border: #ffd700 2px solid;
+    padding: 2px 25px 2px 25px;
+    background-color: #212121;
+    border-radius: .25rem;
+    margin-left: 10px;
+}
+.js-cookie-consent-agree:hover {
+    cursor: pointer;
+    color: #212121;
+    background-color: #ffd700;
+}
+.js-cookie-consent-agree:focus, .privacy-button:focus {
+    outline: 0;
+}
+.cookie-consent__message {
+    display: flex;
+}
+.privacy-button {
+    background-color: transparent;
+    border: none;
+    padding: 0;
+    margin: 0 0 5px 5px;
+    color: #3490dc;
+    text-decoration: underline;
+}
+.privacy-button:hover {
+    cursor: pointer;
+    text-decoration: none;
+    color: #2d73b1;
 }

@@ -60,6 +60,7 @@
     </style>
 </head>
 <body>
+@include('cookieConsent::index')
 <div class="position-ref full-height">
     <div class="main-content-container">
         <div class="content-splitter-left">
@@ -68,6 +69,50 @@
         <div class="content-splitter-right">
             <h1>We are</h1>
             <h1>Barroc Intens</h1>
+        </div>
+    </div>
+    <div class="product-content-container">
+        <div class="product-splitter-text">
+            <div class="product-splitter-text-container">
+                <h2>heerl<span class="highlighted-i">I</span>k</h2>
+                <h2>wakkere</h2>
+                <h2>koffie</h2>
+            </div>
+            <p>Barroc Intens Italian Deluxe</p>
+        </div>
+        <div class="product-splitter-img">
+            <img class="product-img" src="{{ asset('storage/img/bit-deluxe.png') }}" alt="bit-deluxe">
+        </div>
+    </div>
+    <div class="product-content-container">
+        <div class="product-splitter-img">
+            <img class="product-img" src="{{ asset('storage/img/bit-light.png') }}" alt="bit-light">
+        </div>
+        <div class="product-splitter-text">
+            <div class="product-splitter-text-container">
+                <h2>vl<span class="highlighted-i">I</span>mmend</h2>
+                <h2>lekkere</h2>
+                <h2>koffie</h2>
+            </div>
+            <p>Barroc Intens Italian Light</p>
+        </div>
+    </div>
+    <div class="product-content-container">
+        <div class="product-splitter-machines">
+            <h2><span class="highlighted-dash">-</span> Automaten <span class="highlighted-dash">-</span></h2>
+            <div class="product-splitter-machines-container">
+                <div class="product-splitter-machines-container-horizontal">
+                    <h3>Barroc Intens Italian Light</h3>
+                    <h3>Barroc Intens Italian</h3>
+                </div>
+                <div class="product-splitter-machines-container-horizontal">
+                    <h3>Barroc Intens Italian Deluxe</h3>
+                    <h3>Barroc Intens Italian Deluxe Special</h3>
+                </div>
+            </div>
+        </div>
+        <div class="product-splitter-beans">
+
         </div>
     </div>
 </div>
