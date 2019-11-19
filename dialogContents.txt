@@ -1,0 +1,16 @@
+<div class="js-cookie-consent cookie-consent">
+
+    <span class="cookie-consent__message">
+        {{--{!! trans('Verbeter de website door cookies toe te staan. <a href="">Privacy verklaring</a>') !!}--}}
+        Verbeter de website door cookies toe te staan.
+        <form action="" method="POST">
+        @csrf
+            <input type="submit" class="privacy-button" value="Privacy verklaring">
+        </form>
+    </span>
+
+    <button class="js-cookie-consent-agree cookie-consent__agree">
+        {{ trans('Cookies toestaan') }}
+    </button>
+
+</div>
