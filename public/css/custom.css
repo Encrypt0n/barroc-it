@@ -1,3 +1,6 @@
+body {
+    background-color: #FFFFFF;
+}
 .home-header {
     background-color: #212121;
 }
@@ -40,6 +43,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    background-color: #FFFFFF;
 }
 .main-logo {
     transition: 0.1s;
@@ -91,6 +95,7 @@
 }
 .product-splitter-img {
     width: 50%;
+    background-color: #FFFFFF;
 }
 .highlighted-i {
     font-family: 'Big Shoulders Display ExtraBold';
@@ -116,24 +121,30 @@
 .product-splitter-machines {
     font-family: 'Roboto';
     width: 50%;
-    height: 100vh;
+    height: 70vh;
     background-color: #F9F9F9;
     display: flex;
     flex-direction: column;
-    justify-content: center;
     align-items: center;
     color: #212121;
 }
 .product-splitter-machines h2 {
     font-family: 'Big Shoulders Display';
     font-size: 5em;
+    margin: 40px 0 40px 0;
 }
 .product-splitter-machines-container {
     display: flex;
     justify-content: center;
 }
 .product-splitter-machines-container-horizontal {
-
+    text-align: center;
+}
+.product-splitter-machines-container-horizontal h3 {
+    font-size: 1.8em;
+    margin: 0 auto;
+    width: 90%;
+    height: 200%;
 }
 .product-content-container-products {
     display: flex;
@@ -142,8 +153,19 @@
     height: 70vh;
 }
 .product-splitter-beans {
+    font-family: 'Roboto';
     width: 50%;
-    height: 100vh;
+    height: 70vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: #212121;
+    background-color: #FFFFFF;
+}
+.product-splitter-beans h2 {
+    font-family: 'Big Shoulders Display';
+    font-size: 5em;
+    margin: 40px 0 40px 0;
 }
 .product-splitter-beans-container {
     display: flex;
@@ -177,6 +199,7 @@
     flex-direction: column;
     align-items: center;
     text-align: center;
+    background-color: #FFFFFF;
 }
 .about-us-container h2 {
     font-family: 'Big Shoulders Display';
@@ -193,6 +216,7 @@
     margin: 40px 0 40px 0;
     display: flex;
     justify-content: center;
+    background-color: #FFFFFF;
 }
 .centered-button {
     width: 350px;
