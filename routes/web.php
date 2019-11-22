@@ -18,8 +18,11 @@ Route::get('/', function () {
 
 
 Route::resource('quotationRequest', 'quotationRequestController');
+Route::resource('customer', 'customerController');
 Route::resource('privacy', 'privacyController');
 Route::get('/home', 'HomeController@index')->name('home');
+Route::get('customerCreate', 'customerController@create');
+Route::post('store', 'customerController@store');
 
 Auth::routes();
 
