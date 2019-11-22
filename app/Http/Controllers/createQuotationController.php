@@ -2,7 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use App\Quotations;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\App;
 
 class createQuotationController extends Controller
 {
@@ -34,7 +36,25 @@ class createQuotationController extends Controller
      */
     public function store(Request $request)
     {
-        return ( new \App\Mail\createQuotationMail($request) )->render();
+        \App\Quotations::insert([
+            'sales_id'                  => 1,
+            'customer_id'               => 1,
+            'accepted'                  => 0,
+            'contactpersonname'         => $request->contactPerson,
+            'contactpersonemail'        => $request->contactPersonEmail,
+            'contactpersonphone'        => $request->contactPersonPhone,
+            'companyaddress'            => $request->companyAddress,
+            'italian_light'             => $request->italianLight,
+            'italian'                   => $request->italian,
+            'italian_deluxe'            => $request->italianDeluxe,
+            'italian_deluxe_special'    => $request->italianDeluxeSpecial,
+            'espresso_beneficio'        => $request->espressoBeneficio,
+            'yellow_bourbon_brasil'     => $request->yellowBourbonBrasil,
+            'espresso_roma'             => $request->espressoRoma,
+            'red_honey_honduras'        => $request->redHoneyHonduras
+            ]);
+
+        return view('welcome');
     }
 
     /**
