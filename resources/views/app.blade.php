@@ -30,8 +30,13 @@
 
                 </ul>
 
+
                 <!-- Right Side Of Navbar -->
                 <ul class="nav nav-pills header-navbar">
+
+
+
+
                     <li class="nav-item">
                         <a class="nav-link header-link" href="{{ route('quotationRequest.create') }}">{{ __('Offerte aanvragen') }}</a>
                     </li>
@@ -67,5 +72,20 @@
         </div>
     </nav>
     @yield('content')
+    <div class="footer">
+        <div class="footer-container">
+            <div class="footer-container-horizontal">
+                <p><span class="highlighted-dash">Tel:</span> +31(0)76 - 5733444</p>
+            </div>
+            <div class="footer-container-horizontal">
+                <p><span class="highlighted-dash">Email:</span> info@barrocintens.nl</p>
+                <form action="{{ route('privacy.index') }}">
+                    @csrf
+                    <input type="submit" class="privacy-button" value="Privacy">
+                </form>
+                <p>© Copyright - <span class="highlighted-dash">Barroc Intens</span></p>
+            </div>
+        </div>
+    </div>
 </body>
 </html>
