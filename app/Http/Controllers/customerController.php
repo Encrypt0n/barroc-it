@@ -2,9 +2,11 @@
 
 namespace App\Http\Controllers;
 
+use App\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Hash;
 
-class quotationRequestController extends Controller
+class customerController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -14,6 +16,13 @@ class quotationRequestController extends Controller
     public function index()
     {
         //
+        $products = User::paginate(20);
+
+
+        // $products = \DB::select('SELECT * FROM products');
+        //\DB::insert('insert into categories (name, description) values (?, ?)', ['ddd', 'Dayle']);
+        return view('/customer/index', ['products' => $products]);
+
     }
 
     /**
@@ -23,7 +32,11 @@ class quotationRequestController extends Controller
      */
     public function create()
     {
-        return view('Quotations/create');
+        //
+
+
+        return view('customer/create');
+
     }
 
     /**
@@ -34,7 +47,56 @@ class quotationRequestController extends Controller
      */
     public function store(Request $request)
     {
-        return ( new \App\Mail\quotationRequestMail($request) )->render();
+        //
+
+        $contactname = $request->input('contactname');
+        $email = $request->input('email');
+        $password = $request->input('password');
+
+        \App\User::insert([
+            'name' => $contactname,
+            'email' => $email,
+            'password' => Hash::make($password)
+
+
+        ]);
+
+
+
+
+
+
+
+
+
+
+        $user = \DB::table('users')
+        ->where('email', $email)
+        ->first();
+
+       // $user = \App\User::where('email', $email->first());
+
+
+
+
+
+
+
+
+        $companyname = $request->input('companyname');
+        $workemail = $request->input('workemail');
+        $address = $request->input('address');
+
+        \DB::table('companydetails')->insert([
+            'name' => $companyname,
+            'email' => $workemail,
+            'address' => $address,
+            'user_id' => $user->id
+        ]);
+
+
+
+
     }
 
     /**

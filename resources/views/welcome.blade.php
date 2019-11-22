@@ -54,7 +54,7 @@
         <div class="product-splitter-beans">
             <h2><span class="highlighted-dash">-</span> Koffiebonen <span class="highlighted-dash">-</span></h2>
             <div class="product-splitter-beans-container">
-                <div class="product-splitter-beans-container-vertical">
+                <div class="product-splitter-beans-container-horizontal">
                     <div class="beans-product">
                         <h3>Espresso Beneficio</h3>
                         <p>Een toegankelijke en zachte koffie.  Hij is afkomstig van de Finca El Limoncillo, een weelderige plantage aan de rand van het regenwoud in de Matagalpa regio in Nicaragua.</p>
@@ -64,7 +64,7 @@
                         <p>Koffie van de oorspronkelijke koffiestruik (de Bourbon) met gele koffiebessen. Deze zeldzame koffie heeft de afgelopen 20 jaar steeds meer erkenning gekregen en vele prijzen gewonnen.</p>
                     </div>
                 </div>
-                <div class="product-splitter-beans-container-vertical">
+                <div class="product-splitter-beans-container-horizontal">
                     <div class="beans-product">
                         <h3>Espresso Roma</h3>
                         <p>Een Italiaanse espresso met een krachtig karakter en een aromatische afdronk.</p>

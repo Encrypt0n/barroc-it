@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
-class quotationRequestController extends Controller
+class salesController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -23,7 +23,7 @@ class quotationRequestController extends Controller
      */
     public function create()
     {
-        return view('Quotations/create');
+        //
     }
 
     /**
@@ -34,7 +34,7 @@ class quotationRequestController extends Controller
      */
     public function store(Request $request)
     {
-        return ( new \App\Mail\quotationRequestMail($request) )->render();
+        //
     }
 
     /**
