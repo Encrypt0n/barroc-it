@@ -17,6 +17,8 @@ class CreateCompanydetailsTable extends Migration
             $table->bigIncrements('id');
             $table->unsignedBigInteger('user_id');
             $table->string('name');
+            $table->string('email');
+            $table->string('address');
             $table->timestamps();
 
             $table->foreign('user_id')

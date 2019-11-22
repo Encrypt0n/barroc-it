@@ -2,11 +2,9 @@
 
 namespace App\Http\Controllers;
 
-use App\User;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Hash;
 
-class customerController extends Controller
+class salesController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -16,13 +14,6 @@ class customerController extends Controller
     public function index()
     {
         //
-        $products = User::paginate(20);
-
-
-        // $products = \DB::select('SELECT * FROM products');
-        //\DB::insert('insert into categories (name, description) values (?, ?)', ['ddd', 'Dayle']);
-        return view('/customer/index', ['products' => $products]);
-
     }
 
     /**
@@ -33,10 +24,6 @@ class customerController extends Controller
     public function create()
     {
         //
-
-
-        return view('customer/create');
-
     }
 
     /**
@@ -48,55 +35,6 @@ class customerController extends Controller
     public function store(Request $request)
     {
         //
-
-        $contactname = $request->input('contactname');
-        $email = $request->input('email');
-        $password = $request->input('password');
-
-        \App\User::insert([
-            'name' => $contactname,
-            'email' => $email,
-            'password' => Hash::make($password)
-
-
-        ]);
-
-
-
-
-
-
-
-
-
-
-        $user = \DB::table('users')
-        ->where('email', $email)
-        ->first();
-
-       // $user = \App\User::where('email', $email->first());
-
-
-
-
-
-
-
-
-        $companyname = $request->input('companyname');
-        $workemail = $request->input('workemail');
-        $address = $request->input('address');
-
-        \DB::table('companydetails')->insert([
-            'name' => $companyname,
-            'email' => $workemail,
-            'address' => $address,
-            'user_id' => $user->id
-        ]);
-
-
-
-
     }
 
     /**
