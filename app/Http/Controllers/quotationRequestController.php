@@ -23,7 +23,7 @@ class quotationRequestController extends Controller
      */
     public function create()
     {
-        return view('Customer/Quotations/create');
+        return view('customer/Quotations/create');
     }
 
     /**
@@ -34,7 +34,7 @@ class quotationRequestController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        return ( new \App\Mail\quotationRequestMail($request) )->render();
     }
 
     /**
