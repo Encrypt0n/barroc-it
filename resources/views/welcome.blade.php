@@ -19,28 +19,35 @@
             height: 100vh;
             margin: 0;
         }
+
         .full-height {
             height: 100vh;
         }
+
         .flex-center {
             align-items: center;
             display: flex;
             justify-content: center;
         }
+
         .position-ref {
             position: relative;
         }
+
         .top-right {
             position: absolute;
             right: 10px;
             top: 18px;
         }
+
         .content {
             text-align: center;
         }
+
         .title {
             font-size: 84px;
         }
+
         .links > a {
             color: #636b6f;
             padding: 0 25px;
@@ -105,29 +112,7 @@
             </div>
         </div>
         <div class="product-splitter-beans">
-            <h2><span class="highlighted-dash">-</span> Koffiebonen <span class="highlighted-dash">-</span></h2>
-            <div class="product-splitter-beans-container">
-                <div class="product-splitter-beans-container-horizontal">
-                    <div class="beans-product">
-                        <h3>Espresso Beneficio</h3>
-                        <p>Een toegankelijke en zachte koffie.  Hij is afkomstig van de Finca El Limoncillo, een weelderige plantage aan de rand van het regenwoud in de Matagalpa regio in Nicaragua.</p>
-                    </div>
-                    <div class="beans-product">
-                        <h3>Yellow Bourbon Brasil</h3>
-                        <p>Koffie van de oorspronkelijke koffiestruik (de Bourbon) met gele koffiebessen. Deze zeldzame koffie heeft de afgelopen 20 jaar steeds meer erkenning gekregen en vele prijzen gewonnen.</p>
-                    </div>
-                </div>
-                <div class="product-splitter-beans-container-horizontal">
-                    <div class="beans-product">
-                        <h3>Espresso Roma</h3>
-                        <p>Een Italiaanse espresso met een krachtig karakter en een aromatische afdronk.</p>
-                    </div>
-                    <div class="beans-product">
-                        <h3>Red Honey Honduras</h3>
-                        <p>De koffie is geproduceerd volgens de honey-methode. Hierbij wordt de koffieboon in haar vruchtvlees gedroogd, waardoor de zoete fruitsmaak diep in de boon trekt. Dit levert een éxtra zoete koffie op.</p>
-                    </div>
-                </div>
-            </div>
+
         </div>
     </div>
 </div>
