@@ -328,7 +328,7 @@ body {
     text-decoration: none;
     color: #2d73b1;
 }
-<<<<<<< Updated upstream
+
 /* ================================================================== */
 /*                              footer                                */
 /* ================================================================== */
@@ -355,7 +355,6 @@ body {
 .footer-container-horizontal p, .footer-container-horizontal a {
     margin: 10px 0 0 0;
 }
-=======
 
 /* ================================================================== */
 /*                            quotation content                       */
@@ -393,4 +392,4 @@ body {
 .orderitem input{
     max-width: 50px;
 }
->>>>>>> Stashed changes
+
