@@ -1,11 +1,7 @@
 @component('mail::message')
-    # Nieuwe offerte
+    # Nieuwe prijsopgrave
+    Bedrijfsnaam: {{$mailData->companyAddress}}
 
-    Bedrijf:
-    Naam: {{$mailData->companyName}}
-    Adres: {{$mailData->companyAddress}}
-    Telefoonnummer: {{$mailData->companyPhoneNumber}}
-    Email: {{$mailData->companyEmail}}
 
     Contactpersoon:
     Naam: {{$mailData->contactPerson}}

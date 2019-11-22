@@ -16,9 +16,9 @@ class createQuotationMail extends Mailable
      *
      * @return void
      */
-    public function __construct()
+    public function __construct($request)
     {
-        //
+        $this->mailData = $request;
     }
 
     /**
@@ -28,6 +28,6 @@ class createQuotationMail extends Mailable
      */
     public function build()
     {
-        return $this->view('view.name');
+        return $this->markdown('emails.createQuotations')->with('mailData', $this->mailData);
     }
 }
