@@ -116,28 +116,40 @@
 .product-splitter-machines {
     font-family: 'Roboto';
     width: 50%;
-    height: 100vh;
+    height: 70vh;
     background-color: #F9F9F9;
     display: flex;
     flex-direction: column;
-    justify-content: center;
     align-items: center;
     color: #212121;
 }
-.product-splitter-machines h2 {
+.product-splitter-machines h2, .product-splitter-beans h2 {
     font-family: 'Big Shoulders Display';
     font-size: 5em;
+    margin: 40px 0 40px 0;
+    color: #212121;
 }
 .product-splitter-machines-container {
     display: flex;
     justify-content: center;
 }
 .product-splitter-machines-container-horizontal {
-
+    text-align: center;
+}
+.product-splitter-machines-container-horizontal h3 {
+    font-size: 1.8em;
+    margin: 0 auto;
+    width: 90%;
+    height: 200%;
 }
 .product-splitter-beans {
+    font-family: 'Roboto';
     width: 50%;
-    height: 100vh;
+    height: 70vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: #212121;
 }
 /* ================================================================== */
 /*                              fonts                                 */
@@ -159,20 +171,15 @@
 /* ================================================================== */
 /*                              animations                            */
 /* ================================================================== */
-.template {
-    transition: 0.1s;
-    animation: fade-in-text 2s ease;
-    animation-fill-mode: both;
-}
 @keyframes fade-in-left{
-    0%{
-        transform: rotate(0deg) scale(1) translateX(-200px);
-        opacity: 0;
-    }
-    100% {
-        transform: rotate(0deg) scale(1) translateX(0);
-        opacity: 1;
-    }
+     0%{
+         transform: rotate(0deg) scale(1) translateX(-200px);
+         opacity: 0;
+     }
+     100% {
+         transform: rotate(0deg) scale(1) translateX(0);
+         opacity: 1;
+     }
 }
 @keyframes fade-in-right{
     0%{
