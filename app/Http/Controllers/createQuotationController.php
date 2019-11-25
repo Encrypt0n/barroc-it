@@ -38,7 +38,6 @@ class createQuotationController extends Controller
     {
         \App\Quotations::insert([
             'sales_id'                  => 1,
-            'customer_id'               => 1,
             'accepted'                  => 0,
             'contactpersonname'         => $request->contactPerson,
             'contactpersonemail'        => $request->contactPersonEmail,
