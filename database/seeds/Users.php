@@ -12,7 +12,6 @@ class Users extends Seeder
      */
     public function run()
     {
-
         \App\User::insert([
             'name' => 'Bas',
             'email' => 'Sales@barrocit.nl',
@@ -20,6 +19,14 @@ class Users extends Seeder
             'created_at' => now(),
             'updated_at' => now(),
             'role'      => 3
+        ]);
+        \App\User::insert([
+            'name' => 'Xander',
+            'email' => 'Klant@barrocit.nl',
+            'password' => Hash::make('Welkom01'),
+            'created_at' => now(),
+            'updated_at' => now(),
+            'role'      => 0
         ]);
     }
 }

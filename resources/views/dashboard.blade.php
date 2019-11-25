@@ -44,11 +44,15 @@
     <main>
         <div class="sidebar-menu">
             <div class="sidebar-menu-container">
-                {{-- Sales--}}
+                {{-- Sales --}}
                 @if (Auth::user()->role == 3)
-                    <a class="dashboard-link" href="{{ route('home') }}">test</a>
-                    <div class="yellow-splitter-line"></div>
                     <a class="dashboard-link" href="{{ route('createQuotation.create') }}">Prijsopgave aanmaken</a>
+                    <div class="yellow-splitter-line"></div>
+                @endif
+                {{-- Klant --}}
+                @if (Auth::user()->role == 0)
+                    <a class="dashboard-link" href="{{ route('failureRequest.create') }}">Storing melding</a>
+                    <div class="yellow-splitter-line"></div>
                 @endif
             </div>
         </div>
