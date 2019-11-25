@@ -40,10 +40,6 @@
                     <li class="nav-item">
                         <a class="nav-link header-link" href="{{ route('quotationRequest.create') }}">{{ __('Offerte aanvragen') }}</a>
                     </li>
-
-                    <li class="nav-item">
-                        <a class="nav-link header-link" href="{{ route('createQuotation.create') }}">{{ __('Prijsopgave aanmaken') }}</a>
-                    </li>
                     <!-- Authentication Links -->
                     @guest
                         <li class="nav-item">

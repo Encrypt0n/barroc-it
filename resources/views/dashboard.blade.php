@@ -48,6 +48,7 @@
                 @if (Auth::user()->role == 3)
                     <a class="dashboard-link" href="{{ route('home') }}">test</a>
                     <div class="yellow-splitter-line"></div>
+                    <a class="dashboard-link" href="{{ route('createQuotation.create') }}">Prijsopgave aanmaken</a>
                 @endif
             </div>
         </div>
