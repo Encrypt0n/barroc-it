@@ -64,6 +64,14 @@
                                 <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
                                     @csrf
                                 </form>
+                                <a class="dropdown-item" href="{{ route('home') }}"
+                                   onclick="event.preventDefault();
+                                                         document.getElementById('home-form').submit();">
+                                    {{ __('Dashboard') }}
+                                </a>
+                                <form id="home-form" action="{{ route('home') }}" style="display: none;">
+                                    @csrf
+                                </form>
                             </div>
                         </li>
                     @endguest

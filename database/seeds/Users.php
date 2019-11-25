@@ -13,17 +13,12 @@ class Users extends Seeder
     {
 
         \App\User::insert([
-
-
-
             'name' => 'Bas',
             'email' => 'Sales@barrocit.nl',
             'password' => Hash::make('Welkom01'),
             'created_at' => now(),
             'updated_at' => now(),
             'role'      => 3
-
-
         ]);
     }
 }

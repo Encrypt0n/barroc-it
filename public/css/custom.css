@@ -234,6 +234,55 @@ body {
     background-color: #FFE55A;
 }
 /* ================================================================== */
+/*                            dashboard                               */
+/* ================================================================== */
+.logout-button {
+    color: #ffd700;
+    border: #ffd700 2px solid;
+    padding: 2px 25px 2px 25px;
+    background-color: #212121;
+    border-radius: .25rem;
+}
+.logout-button:hover {
+    color: #212121;
+    background-color: #ffd700;
+}
+main {
+    height: 90vh;
+    display: flex;
+}
+.dashboard-content {
+    width: 90%;
+    margin: 0 0 0 10%;
+}
+.sidebar-menu {
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 100;
+    padding: 65px 0 0 0;
+    background-color: #212121;
+    color: #FFFFFF;
+    height: 100%;
+    width: 10%;
+    text-align: center;
+}
+.dashboard-link {
+    font-size: 2em;
+    color: white;
+    text-decoration: underline;
+}
+.dashboard-link:hover {
+    text-decoration: none;
+    color: white;
+}
+.yellow-splitter-line {
+    width: 100%;
+    background-color: #ffd700;
+    height: 5px;
+}
+/* ================================================================== */
 /*                              fonts                                 */
 /* ================================================================== */
 @font-face {
@@ -309,7 +358,7 @@ body {
     color: #212121;
     background-color: #ffd700;
 }
-.js-cookie-consent-agree:focus, .privacy-button:focus, .centered-button:focus {
+.js-cookie-consent-agree:focus, .privacy-button:focus, .centered-button:focus, .logout-button:focus {
     outline: 0;
 }
 .cookie-consent__message {
