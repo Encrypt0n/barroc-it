@@ -1,0 +1,4 @@
+database; role 3 = Sales, role 2 = Maintenance, role 1 = Finance, role 0 = klant, role 4 = supplies
+
+inloggegevens; Sales: Sales@barrocit.nl, ww: Welkom01
+	       

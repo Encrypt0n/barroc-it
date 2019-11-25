@@ -28,6 +28,10 @@ class createQuotationMail extends Mailable
      */
     public function build()
     {
+<<<<<<< Updated upstream
         return $this->markdown('emails.createQuotations')->with('mailData', $this->mailData);
+=======
+        return $this->view('emails.createQuotations');
+>>>>>>> Stashed changes
     }
 }

@@ -16,17 +16,24 @@ class CreateQuotationsTable extends Migration
         Schema::create('quotations', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->unsignedBigInteger('sales_id');
-            $table->unsignedBigInteger('customer_id');
+            $table->string('contactpersonname');
+            $table->string('contactpersonemail');
+            $table->string('contactpersonphone');
+            $table->string('companyaddress');
+            $table->integer('italian_light');
+            $table->integer('italian');
+            $table->integer('italian_deluxe');
+            $table->integer('italian_deluxe_special');
+            $table->integer('espresso_beneficio');
+            $table->integer('yellow_bourbon_brasil');
+            $table->integer('espresso_roma');
+            $table->integer('red_honey_honduras');
             $table->boolean('accepted');
             $table->timestamps();
 
-            $table->foreign('sales_id')
-                ->references('id')
-                ->on('users');
-
-            $table->foreign('customer_id')
-                ->references('id')
-                ->on('users');
+//            $table->foreign('sales_id')
+//                ->references('id')
+//                ->on('users');
         });
     }
 
