@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Product;
 use Illuminate\Http\Request;
+//use Laravel\Scout\Sea
 
 class ProductController extends Controller
 {
@@ -83,4 +84,6 @@ class ProductController extends Controller
     {
         //
     }
+
+
 }

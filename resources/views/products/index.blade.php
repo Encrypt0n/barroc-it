@@ -5,7 +5,7 @@
             @foreach($products as $product)
                 <div class="product">
                     <div class="product-name">
-                        <p>{{$product->name}}</p>
+                        <a href="{{route('products.show', $product->id )}}">{{$product->name}}</a>
                     </div>
                     <div class="product-availability">
                         @if($product->amount > 0)
