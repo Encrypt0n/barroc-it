@@ -22,6 +22,11 @@ Route::resource('createQuotation', 'createQuotationController');
 Route::resource('customer', 'customerController');
 Route::resource('quotationreview', 'finance\quotationreviewController');
 Route::resource('privacy', 'privacyController');
+<<<<<<< HEAD
+Route::resource('products', 'ProductController');
+=======
+Route::resource('jobTicket', 'jobTicketController');
+>>>>>>> master
 Route::get('/home', 'HomeController@index')->name('home');
 Route::get('customerCreate', 'customerController@create');
 Route::get('quotationreviewindex', 'finance\quotationreviewController@index');

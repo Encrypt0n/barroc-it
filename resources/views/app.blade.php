@@ -37,10 +37,6 @@
                     <li class="nav-item">
                         <a class="nav-link header-link" href="{{ route('quotationRequest.create') }}">{{ __('Offerte aanvragen') }}</a>
                     </li>
-
-                    <li class="nav-item">
-                        <a class="nav-link header-link" href="{{ route('createQuotation.create') }}">{{ __('Prijsopgave aanmaken') }}</a>
-                    </li>
                     <!-- Authentication Links -->
                     @guest
                         <li class="nav-item">
@@ -59,6 +55,14 @@
                                     {{ __('Logout') }}
                                 </a>
                                 <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                                    @csrf
+                                </form>
+                                <a class="dropdown-item" href="{{ route('home') }}"
+                                   onclick="event.preventDefault();
+                                                         document.getElementById('home-form').submit();">
+                                    {{ __('Dashboard') }}
+                                </a>
+                                <form id="home-form" action="{{ route('home') }}" style="display: none;">
                                     @csrf
                                 </form>
                             </div>
