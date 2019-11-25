@@ -246,14 +246,15 @@ body {
 .logout-button:hover {
     color: #212121;
     background-color: #ffd700;
+    cursor: pointer;
 }
 main {
     height: 90vh;
     display: flex;
 }
 .dashboard-content {
-    width: 90%;
-    margin: 0 0 0 10%;
+    width: 87.5%;
+    margin: 0 0 0 12.5%;
 }
 .sidebar-menu {
     display: block;
@@ -265,7 +266,7 @@ main {
     background-color: #212121;
     color: #FFFFFF;
     height: 100%;
-    width: 10%;
+    width: 12.5%;
     text-align: center;
 }
 .dashboard-link {

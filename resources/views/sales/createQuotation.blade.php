@@ -7,6 +7,12 @@
 
             {{--contactinformatie--}}
             <div class="contact">
+
+                <div class="contactItem">
+                    <label for="companyName">Bedrijfsnaam</label>
+                    <input type="text" name="companyName">
+                </div>
+
                 <div class="contactItem">
                     <label for="contactPersonEmail">Contactpersoon email</label>
                     <input type="text" name="contactPersonEmail">
