@@ -2,6 +2,7 @@
 
 namespace App\Mail;
 
+use http\Env\Request;
 use Illuminate\Bus\Queueable;
 use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Mail\Mailable;
@@ -18,7 +19,7 @@ class createQuotationMail extends Mailable
      */
     public function __construct($request)
     {
-        $this->mailData = $request;
+        $this->request = $request;
     }
 
     /**
@@ -28,10 +29,7 @@ class createQuotationMail extends Mailable
      */
     public function build()
     {
-<<<<<<< Updated upstream
-        return $this->markdown('emails.createQuotations')->with('mailData', $this->mailData);
-=======
-        return $this->view('emails.createQuotations');
->>>>>>> Stashed changes
+
+        return $this->markdown('emails.createQuotations')->with('all', $this->request);
     }
 }

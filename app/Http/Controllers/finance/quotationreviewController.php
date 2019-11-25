@@ -1,7 +1,8 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\finance;
 
+use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 
 class quotationreviewController extends Controller
@@ -14,14 +15,12 @@ class quotationreviewController extends Controller
     public function index()
     {
         //
-
         $quotations = \DB::select('SELECT * FROM quotations');
 
 
         // $products = \DB::select('SELECT * FROM products');
         //\DB::insert('insert into categories (name, description) values (?, ?)', ['ddd', 'Dayle']);
         return view('/Finance/quotations/index', ['quotations' => $quotations]);
-
     }
 
     /**
@@ -43,7 +42,31 @@ class quotationreviewController extends Controller
     public function store(Request $request)
     {
         //
+        $order =    \DB::table('quotations');
+        $order->user_id = \Auth::id();
+        $order->id = $request->quotation_id;
+        //$order->save();
 
+        \DB::table('quotations')
+
+            ->where('id', $order->id)
+            ->update(array('accepted' => 1)
+            );
+
+
+        //$product = \App\Product::find($request->product_id);
+        $mailData = \DB::table('quotations')
+            ->where('id', $request->quotation_id)
+            ->first();
+
+        //return (  new \App\Mail\TestMail($product->name))->render();
+
+        \Mail::to(\Auth::user())->send( new \App\Mail\createQuotationMail($mailData->companyname, $mailData->contactpersonname, $mailData->contactpersonemail,
+            $mailData->contactpersonphone, $mailData->companyaddress, $mailData->italian_light, $mailData->italian, $mailData->italian_deluxe,
+            $mailData->italian_deluxe_special, $mailData->espresso_beneficio, $mailData->yellow_bourbon_brasil, $mailData->espresso_roma,
+            $mailData->red_honey_honduras));
+
+        return 'U heeft een aankoop gedaan, no refunds!!!';
     }
 
     /**
@@ -55,6 +78,13 @@ class quotationreviewController extends Controller
     public function show($id)
     {
         //
+        $quotation = \DB::table('quotations')
+        ->where('id', $id)
+        ->first();
+        //$product = Product::find($id);
+
+        return view('Finance/quotations/show', ['quotation' => $quotation]);
+
     }
 
     /**

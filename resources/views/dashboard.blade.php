@@ -54,6 +54,13 @@
                     <a class="dashboard-link" href="{{ route('failureRequest.create') }}">Storing melding</a>
                     <div class="yellow-splitter-line"></div>
                 @endif
+
+                {{-- Maintenance--}}
+                @if (Auth::user()->role == 2)
+                    <a class="dashboard-link" href="{{ route('jobTicket.create') }}">Werkbon aanmaken</a>
+                    <div class="yellow-splitter-line"></div>
+
+                @endif
             </div>
         </div>
         <div class="dashboard-content">

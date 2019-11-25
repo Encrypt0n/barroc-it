@@ -20,10 +20,15 @@ Route::get('/', function () {
 Route::resource('quotationRequest', 'quotationRequestController');
 Route::resource('createQuotation', 'createQuotationController');
 Route::resource('customer', 'customerController');
+Route::resource('quotationreview', 'finance\quotationreviewController');
 Route::resource('privacy', 'privacyController');
+Route::resource('products', 'ProductController');
+Route::resource('jobTicket', 'jobTicketController');
 Route::resource('/failureRequest', 'customer\failureRequestController');
 Route::get('/home', 'HomeController@index')->name('home');
 Route::get('customerCreate', 'customerController@create');
+Route::get('quotationreviewindex', 'finance\quotationreviewController@index');
+Route::get('quotationreviewshow', 'finance\quotationreviewController@show');
 Route::post('store', 'customerController@store');
 
 Auth::routes();

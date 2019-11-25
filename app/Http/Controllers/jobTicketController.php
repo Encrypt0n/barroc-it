@@ -2,11 +2,9 @@
 
 namespace App\Http\Controllers;
 
-use App\Quotations;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\App;
 
-class createQuotationController extends Controller
+class jobTicketController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -25,7 +23,7 @@ class createQuotationController extends Controller
      */
     public function create()
     {
-        return view('sales/createQuotation');
+        return view('Maintenance/createJobTicket');
     }
 
     /**
@@ -36,25 +34,7 @@ class createQuotationController extends Controller
      */
     public function store(Request $request)
     {
-        \App\Quotations::insert([
-            'sales_id'                  => 1,
-            'accepted'                  => 0,
-            'companyname'         => $request->companyName,
-            'contactpersonname'         => $request->contactPerson,
-            'contactpersonemail'        => $request->contactPersonEmail,
-            'contactpersonphone'        => $request->contactPersonPhone,
-            'companyaddress'            => $request->companyAddress,
-            'italian_light'             => $request->italianLight,
-            'italian'                   => $request->italian,
-            'italian_deluxe'            => $request->italianDeluxe,
-            'italian_deluxe_special'    => $request->italianDeluxeSpecial,
-            'espresso_beneficio'        => $request->espressoBeneficio,
-            'yellow_bourbon_brasil'     => $request->yellowBourbonBrasil,
-            'espresso_roma'             => $request->espressoRoma,
-            'red_honey_honduras'        => $request->redHoneyHonduras
-            ]);
-
-        return view('welcome');
+        //
     }
 
     /**
