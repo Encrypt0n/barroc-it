@@ -23,7 +23,7 @@ class jobTicketController extends Controller
      */
     public function create()
     {
-        return view('Maintenance/createJobTicket');
+        return view('Maintenance/create');
     }
 
     /**
