@@ -56,7 +56,7 @@
                 @endif
                 {{-- Finance --}}
                 @if (Auth::user()->role == 1)
-                    <a class="dashboard-link" href="{{ route('reviewQuotation.show') }}">Offerte overzicht</a>
+                    <a class="dashboard-link" href="{{ route('reviewQuotation.index') }}">Offerte overzicht</a>
                     <div class="yellow-splitter-line"></div>
                 @endif
 
@@ -66,10 +66,8 @@
                     <div class="yellow-splitter-line"></div>
                     <a class="dashboard-link" href="{{ route('failureRequest.index') }}">Storings meldingen</a>
                 @endif
-                {{-- Finance--}}
-                @if (Auth::user()->role == 1)
 
-                @endif
+
             </div>
         </div>
         <div class="dashboard-content">
