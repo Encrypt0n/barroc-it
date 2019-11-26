@@ -13,7 +13,7 @@
 <p>{{ $quotation->espresso_roma    }}</p>
 <p>{{ $quotation->red_honey_honduras    }}</p>
 
-<form action="{{ route('quotationreview.store', $quotation->id)  }}" method="post">
+<form action="{{ route('reviewQuotation.store', $quotation->id)  }}" method="post">
 
     @csrf
     <input type="submit" value="Yes" class="btn btn-info">
