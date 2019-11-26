@@ -55,16 +55,13 @@ class quotationreviewController extends Controller
 
 
         //$product = \App\Product::find($request->product_id);
-        $mailData = \DB::table('quotations')
+        $maildata = \DB::table('quotations')
             ->where('id', $request->quotation_id)
             ->first();
 
-        //return (  new \App\Mail\TestMail($product->name))->render();
+        return (  new \App\Mail\createQuotationMail($maildata))->render();
 
-        \Mail::to(\Auth::user())->send( new \App\Mail\createQuotationMail($mailData->companyname, $mailData->contactpersonname, $mailData->contactpersonemail,
-            $mailData->contactpersonphone, $mailData->companyaddress, $mailData->italian_light, $mailData->italian, $mailData->italian_deluxe,
-            $mailData->italian_deluxe_special, $mailData->espresso_beneficio, $mailData->yellow_bourbon_brasil, $mailData->espresso_roma,
-            $mailData->red_honey_honduras));
+        //\Mail::to(\Auth::user())->send( new \App\Mail\createQuotationMail($maildata));
 
         return 'U heeft een aankoop gedaan, no refunds!!!';
     }

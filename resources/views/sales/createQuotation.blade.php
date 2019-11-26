@@ -40,14 +40,39 @@
                     <input type="text" name="italianLight">
                 </div>
 
+
+
+                <div class="orderitem">
+                    <label for="italianLight">Espresso Roma</label>
+                    <input type="text" name="espressoRoma">
+                </div>
+
+
+
+                <div class="orderitem">
+                    <label for="italianLight">Barroc Intens Italian Deluxe</label>
+                    <input type="text" name="italianDeluxe">
+                </div>
+
+
+
+
+
+
+                <div class="orderitem">
+                    <label for="italianLight">Red Honey Honduras</label>
+                    <input type="text" name="redHoneyHonduras">
+                </div>
+
                 <div class="orderitem">
                     <label for="italianLight">Barroc intens Italian</label>
                     <input type="text" name="italian">
                 </div>
 
+
                 <div class="orderitem">
-                    <label for="italianLight">Barroc Intens Italian Deluxe</label>
-                    <input type="text" name="italianDeluxe">
+                    <label for="italianLight">Espresso Beneficio</label>
+                    <input type="text" name="espressoBeneficio">
                 </div>
 
                 <div class="orderitem">
@@ -56,24 +81,16 @@
                 </div>
 
                 <div class="orderitem">
-                    <label for="italianLight">Espresso Beneficio</label>
-                    <input type="text" name="espressoBeneficio">
-                </div>
-
-                <div class="orderitem">
                     <label for="italianLight">Yellow Bourbon Brasil</label>
                     <input type="text" name="yellowBourbonBrasil">
                 </div>
 
-                <div class="orderitem">
-                    <label for="italianLight">Espresso Roma</label>
-                    <input type="text" name="espressoRoma">
-                </div>
 
-                <div class="orderitem">
-                    <label for="italianLight">Red Honey Honduras</label>
-                    <input type="text" name="redHoneyHonduras">
-                </div>
+
+
+
+
+
             </div>
 
 
