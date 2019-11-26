@@ -30,6 +30,6 @@ class createQuotationMail extends Mailable
     public function build()
     {
 
-        return $this->markdown('emails.createQuotations')->with('all', $this->request);
+        return $this->markdown('emails.createQuotations')->with('info', $this->request);
     }
 }
