@@ -64,6 +64,10 @@
                 @if (Auth::user()->role == 2)
                     <a class="dashboard-link" href="{{ route('jobTicket.create') }}">Werkbon aanmaken</a>
                     <div class="yellow-splitter-line"></div>
+                    <a class="dashboard-link" href="{{ route('failureRequest.index') }}">Storings meldingen</a>
+                @endif
+                {{-- Finance--}}
+                @if (Auth::user()->role == 1)
 
                 @endif
             </div>
