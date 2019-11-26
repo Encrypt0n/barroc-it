@@ -23,7 +23,7 @@ class Users extends Seeder
         ]);
 
         \App\User::insert([
-           'name'           => 'maintenance-user',
+           'name'           => 'Pieter',
            'email'          => 'Maintenance@barrocit.nl',
            'password'       => Hash::make('Welkom01'),
             'created_at'    => now(),
