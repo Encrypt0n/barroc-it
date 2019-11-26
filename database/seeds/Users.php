@@ -31,12 +31,20 @@ class Users extends Seeder
             'role'          => 2
         ]);
         \App\User::insert([
-            'name' => 'Xander',
-            'email' => 'Klant@barrocit.nl',
-            'password' => Hash::make('Welkom01'),
+            'name'       => 'Xander',
+            'email'      => 'Klant@barrocit.nl',
+            'password'   => Hash::make('Welkom01'),
             'created_at' => now(),
             'updated_at' => now(),
-            'role'      => 0
+            'role'       => 0
+        ]);
+        \App\User::insert([
+            'name'       => 'Pieter',
+            'email'      => 'Finance@barrocit.nl',
+            'password'   => Hash::make('Welkom01'),
+            'created_at' => now(),
+            'updated_at' => now(),
+            'role'       => 1
         ]);
     }
 }

@@ -14,7 +14,7 @@ class failureRequestController extends Controller
      */
     public function index()
     {
-        //
+        return view('maintenance/malfunction/index');
     }
 
     /**
@@ -24,7 +24,7 @@ class failureRequestController extends Controller
      */
     public function create()
     {
-        return view('customer/failure/create');
+        return view('customer/malfunction/create');
     }
 
     /**
@@ -35,7 +35,11 @@ class failureRequestController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        \App\Malfunction::insert([
+            'user_id'     => $request->user()->id,
+            'description' => $request->description
+        ]);
+        return redirect()->route('home');
     }
 
     /**
