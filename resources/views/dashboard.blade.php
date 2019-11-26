@@ -54,6 +54,11 @@
                     <a class="dashboard-link" href="{{ route('failureRequest.create') }}">Storing melding</a>
                     <div class="yellow-splitter-line"></div>
                 @endif
+                {{-- Finance --}}
+                @if (Auth::user()->role == 1)
+                    <a class="dashboard-link" href="{{ route('reviewQuotation.show') }}">Offerte overzicht</a>
+                    <div class="yellow-splitter-line"></div>
+                @endif
 
                 {{-- Maintenance--}}
                 @if (Auth::user()->role == 2)
