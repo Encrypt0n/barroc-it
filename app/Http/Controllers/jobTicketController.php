@@ -23,7 +23,8 @@ class jobTicketController extends Controller
      */
     public function create()
     {
-        return view('Maintenance/create');
+        $supplies = \App\Supply::all();
+        return view('Maintenance/create', ['supplies' => $supplies]);
     }
 
     /**
@@ -34,7 +35,7 @@ class jobTicketController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        dd($request);
     }
 
     /**
