@@ -28,7 +28,17 @@
                             <option value="{{ $company->id }}"> {{ $company->name }} </option>
                         @endforeach
                     </select>
-
+                    <select id="user_id" name="user_id">
+                        @foreach ($users as $user)
+                            @if ($user->role == 2)
+                                <option value="{{ $user->id }}"> {{ $user->name }} </option>
+                            @endif
+                        @endforeach
+                    </select>
+                    <label for="to_repair">Te repareren/installeren</label>
+                    <textarea type="text" id="to_repair" name="to_repair"></textarea>
+                    <label for="to_use">Mee te nemen</label>
+                    <textarea type="text" id="to_use" name="to_use"></textarea>
                     <input type="submit" class="centered-button" value="Bezoek plannen">
                 </form>
             </div>

@@ -28,9 +28,8 @@ class calendarController extends Controller
     public function create()
     {
         $companies = \App\CompanyDetail::all();
-        $users = User::where('role_id', '4');
-        dd($users);
-        return view('maintenance/calendar/create');
+        $users = \App\User::all();
+        return view('maintenance/calendar/create', ['companies' => $companies, 'users' => $users]);
     }
 
     /**
@@ -41,7 +40,15 @@ class calendarController extends Controller
      */
     public function store(Request $request)
     {
-        dd($request->type);
+        \App\Calendar::insert([
+            'type_id'        => $request->type,
+            'company_id'     => $request->company_id,
+            'maintenance_id' => $request->user_id,
+            'date'           => $request->date,
+            'to_repair'      => $request->to_repair,
+            'to_use'         => $request->to_use
+        ]);
+        return redirect()->route('calendar.index');
     }
 
     /**
@@ -52,7 +59,10 @@ class calendarController extends Controller
      */
     public function show($id)
     {
-        //
+        $calendar = \App\Calendar::find($id);
+//        $company = \App\CompanyDetail::find($calendar->company_id);
+//        $user = \App\User::find($calendar->user_id);
+        return view('maintenance/calendar/show', ['calendar' => $calendar]);
     }
 
     /**
