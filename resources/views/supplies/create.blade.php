@@ -1,3 +1,7 @@
+@extends('dashboard')
+@section('content')
+
+
 <form action="{{ route('supplies.store')}}" method="post">
 
     @csrf
@@ -19,5 +23,7 @@
             @endforeach
 
 
-                <input type="submit" value="Order">
+                <input type="submit" value="Bestellen">
     </form>
+
+    @endsection

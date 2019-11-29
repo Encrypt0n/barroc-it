@@ -48,6 +48,8 @@ class SupplyController extends Controller
     {
         //dd($request->all());
         //
+
+        // dd($request);
         $amount = $request->amount;
 
         $name = $request->name;
@@ -55,7 +57,7 @@ class SupplyController extends Controller
 
 
 
-
+        $prices = array();
         $finalprice = 0;
         foreach ($amount as $supply_id => $singleamount) {
 
@@ -73,13 +75,19 @@ class SupplyController extends Controller
 
             $supplies->save();
 
+            //$prices['Aantal'] = $singleamount;
 
 
                 if ($singleamount != null) {
 
+                    //echo $supplies->price;
+
+                    $prices[$supplies->name]=  $supplies->price * $singleamount;
 
 
+                   // $supplyname = $supplies->name;
                     $finalprice += $supplies->price * $singleamount;
+
 
 
 
@@ -90,19 +98,38 @@ class SupplyController extends Controller
 
 
 
+
             /*\DB::table('supplies')
                 ->where('id', $supply_id)// find your user by their email
                 //->limit(1)  // optional - to ensure only one record is updated.
                 ->update(array('amount' => +$oneamount));  // */
         }
 
+        $prices['Totaal'] = $finalprice;
 
 
-        dd($finalprice);
+        //dd($prices);
 
-        if($finalprice >= 5000) {
+        /*foreach ($prices as $supplyName => $supplyPrice) {
 
 
+        }*/
+
+
+
+
+            //dd($finalprice);
+
+
+        if($finalprice > 5000) {
+
+
+            // return ( view: mailToCeo, $supplies ->
+
+
+
+
+                return (  new \App\Mail\CeoMail($prices))->render();
         }
 
         //return (  new \App\Mail\CeoMail($supplies))->render();

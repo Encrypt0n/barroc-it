@@ -14,8 +14,10 @@
                             <p class="not-in-stock">Niet beschikbaar</p>
                         @endif
                     </div>
+
                 </div>
                 @endforeach
+                <a href="{{route('supplies.create')}}">Bijbestellen</a>
         </div>
 
     </div>
