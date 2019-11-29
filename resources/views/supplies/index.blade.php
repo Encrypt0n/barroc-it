@@ -17,7 +17,14 @@
 
                 </div>
                 @endforeach
-                <a href="{{route('supplies.create')}}">Bijbestellen</a>
+                <form action="{{ route('supplies.create') }}">
+                    @csrf
+                    <div class="form-group">
+
+                        <input class="centered-button" type="submit" value="Bijbestellen">
+                    </div>
+                </form>
+
         </div>
 
     </div>

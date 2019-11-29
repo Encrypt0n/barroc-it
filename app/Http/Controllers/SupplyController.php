@@ -134,7 +134,9 @@ class SupplyController extends Controller
 
         //return (  new \App\Mail\CeoMail($supplies))->render();
 
-        //return view('supplies.show', ['supplies' => $supplies]);
+        //return view('supplies.index', ['supplies' => $supplies]);
+
+        return view('/home');
 
     }
 

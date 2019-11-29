@@ -1,7 +1,11 @@
 @extends('dashboard')
 @section('content')
 
-
+    <div class="dashboard-title-container">
+        <div class="dashboard-title">
+            <h2><span class="title-highlighted-dash">-</span> Bijbestellen <span class="title-highlighted-dash">-</span> </h2>
+        </div>
+    </div>
 <form action="{{ route('supplies.store')}}" method="post">
 
     @csrf
