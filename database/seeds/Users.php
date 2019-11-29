@@ -46,5 +46,14 @@ class Users extends Seeder
             'updated_at' => now(),
             'role'       => 1
         ]);
+
+        \App\User::insert([
+            'name'       => 'Henk',
+            'email'      => 'Supplies@barrocit.nl',
+            'password'   => Hash::make('Welkom01'),
+            'created_at' => now(),
+            'updated_at' => now(),
+            'role'       => 4
+        ]);
     }
 }

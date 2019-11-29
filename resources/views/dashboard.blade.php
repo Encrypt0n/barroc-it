@@ -69,6 +69,13 @@
                     <a class="dashboard-link" href="{{ route('calendar.index') }}">Kalender</a>
                 @endif
 
+                {{-- Supplies--}}
+                @if (Auth::user()->role == 4)
+                    <a class="dashboard-link" href="{{ route('supplies.create') }}">Producten bij bestellen</a>
+                    <div class="yellow-splitter-line"></div>
+
+                @endif
+
 
             </div>
         </div>

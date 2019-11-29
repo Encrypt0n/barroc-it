@@ -5,7 +5,7 @@
             @foreach($supplies as $supply)
                 <div class="product">
                     <div class="product-name">
-                        <a href="{{route('products.show', $supply->id )}}">{{$supply->name}}</a>
+                        <a href="{{route('supplies.index', $supply->id )}}">{{$supply->name}}</a>
                     </div>
                     <div class="product-availability">
                         @if($supply->amount > 0)

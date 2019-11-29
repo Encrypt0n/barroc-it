@@ -18,7 +18,7 @@ class quotationreviewController extends Controller
         $quotations = \DB::select('SELECT * FROM quotations');
 
 
-        // $products = \DB::select('SELECT * FROM products');
+        // $supplies = \DB::select('SELECT * FROM supplies');
         //\DB::insert('insert into categories (name, description) values (?, ?)', ['ddd', 'Dayle']);
         return view('/Finance/quotations/index', ['quotations' => $quotations]);
     }

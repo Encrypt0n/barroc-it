@@ -19,9 +19,9 @@ class customerController extends Controller
         $products = User::paginate(20);
 
 
-        // $products = \DB::select('SELECT * FROM products');
+        // $supplies = \DB::select('SELECT * FROM supplies');
         //\DB::insert('insert into categories (name, description) values (?, ?)', ['ddd', 'Dayle']);
-        return view('/customer/index', ['products' => $products]);
+        return view('/customer/index', ['supplies' => $products]);
 
     }
 
