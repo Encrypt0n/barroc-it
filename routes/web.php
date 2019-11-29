@@ -25,6 +25,7 @@ Route::resource('privacy', 'privacyController');
 Route::resource('supplies', 'SupplyController');
 Route::resource('jobTicket', 'jobTicketController');
 Route::resource('/failureRequest', 'customer\failureRequestController');
+Route::resource('jobTicket', 'jobTicketController');
 Route::resource('/calendar', 'maintenance\calendarController');
 Route::get('/home', 'HomeController@index')->name('home');
 Route::get('customerCreate', 'customerController@create');

@@ -13,7 +13,7 @@ class ProductsTableSeeder extends Seeder
     {
         //
         $faker = \Faker\Factory::create();
-        $productCategories = \DB::table('users')->get()->count();
+        //$productCategories = \App\ProductCategory::all()->count();
 
         //for ($i = 0; $i < 25; $i++) {
 

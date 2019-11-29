@@ -6,7 +6,6 @@ use Illuminate\Database\Eloquent\Model;
 
 class Supply extends Model
 {
-    //
     protected $fillable = ['name', 'price', 'amount', 'supply_categories_id'];
 
 
