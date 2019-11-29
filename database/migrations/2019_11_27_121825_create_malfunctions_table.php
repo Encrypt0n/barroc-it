@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateCompanydetailsTable extends Migration
+class CreateMalfunctionsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,17 +13,15 @@ class CreateCompanydetailsTable extends Migration
      */
     public function up()
     {
-        Schema::create('companydetails', function (Blueprint $table) {
+        Schema::create('malfunctions', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->unsignedBigInteger('user_id');
-            $table->string('name');
-            $table->string('email');
-            $table->string('address');
+            $table->unsignedBigInteger('company_id');
+            $table->text('description');
             $table->timestamps();
 
-            $table->foreign('user_id')
+            $table->foreign('company_id')
                 ->references('id')
-                ->on('users');
+                ->on('company_details');
         });
     }
 
@@ -34,6 +32,6 @@ class CreateCompanydetailsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('companydetails');
+        Schema::dropIfExists('malfunctions');
     }
 }

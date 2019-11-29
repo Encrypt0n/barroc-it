@@ -17,7 +17,7 @@
 <body>
     <nav class="navbar navbar-expand-md navbar-light home-header">
         <div class="container">
-            <a class="navbar-brand header-logo-container" href="{{ url('/') }}">
+            <a class="navbar-brand header-logo-container" href="{{ route('home') }}">
                 <img class="header-logo" src="{{ asset('storage/img/Logo5_groot_cutout.png') }}" alt="logo5_groot">
             </a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
@@ -59,6 +59,8 @@
                     <a class="dashboard-link" href="{{ route('jobTicket.create') }}">Werkbon aanmaken</a>
                     <div class="yellow-splitter-line"></div>
                     <a class="dashboard-link" href="{{ route('failureRequest.index') }}">Storings meldingen</a>
+                    <div class="yellow-splitter-line"></div>
+                    <a class="dashboard-link" href="{{ route('calendar.index') }}">Kalender</a>
                 @endif
                 {{-- Finance--}}
                 @if (Auth::user()->role == 1)
