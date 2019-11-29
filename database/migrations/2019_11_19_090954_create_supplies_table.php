@@ -17,6 +17,7 @@ class CreateSuppliesTable extends Migration
             $table->bigIncrements('id');
             $table->string('name');
             $table->decimal('price');
+            $table->bigInteger('product_categories_id');
             $table->smallInteger('amount');
             $table->timestamps();
         });

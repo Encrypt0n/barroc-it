@@ -22,7 +22,7 @@ Route::resource('createQuotation', 'createQuotationController');
 Route::resource('customer', 'customerController');
 Route::resource('/reviewQuotation', 'finance\quotationreviewController');
 Route::resource('privacy', 'privacyController');
-Route::resource('products', 'ProductController');
+Route::resource('supplies', 'SupplyController');
 Route::resource('jobTicket', 'jobTicketController');
 Route::resource('/failureRequest', 'customer\failureRequestController');
 Route::resource('/calendar', 'maintenance\calendarController');

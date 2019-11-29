@@ -2,14 +2,14 @@
 @section('content')
     <div class="container">
         <div class="products">
-            @foreach($products as $product)
+            @foreach($supplies as $supply)
                 <div class="product">
                     <div class="product-name">
-                        <a href="{{route('products.show', $product->id )}}">{{$product->name}}</a>
+                        <a href="{{route('supplies.index', $supply->id )}}">{{$supply->name}}</a>
                     </div>
                     <div class="product-availability">
-                        @if($product->amount > 0)
-                            <p><span class="in-stock">Op voorraad</span> {{$product->amount}}</p>
+                        @if($supply->amount > 0)
+                            <p><span class="in-stock">Op voorraad</span> {{$supply->amount}}</p>
                         @else
                             <p class="not-in-stock">Niet beschikbaar</p>
                         @endif
@@ -17,6 +17,6 @@
                 </div>
                 @endforeach
         </div>
-        {{$products->links()}}
+
     </div>
 @endsection
