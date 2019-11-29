@@ -1,12 +1,13 @@
 <?php
 
-namespace App\Http\Controllers\customer;
+namespace App\Http\Controllers\maintenance;
 
-use App\CompanyDetail;
 use App\Http\Controllers\Controller;
+use App\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\App;
 
-class failureRequestController extends Controller
+class calendarController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -15,8 +16,8 @@ class failureRequestController extends Controller
      */
     public function index()
     {
-        $malfunctions = \App\Malfunction::all();
-        return view('maintenance/malfunction/index', ['malfunctions' => $malfunctions]);
+        $calendars = \App\Calendar::all();
+        return view('maintenance/calendar/index', ['calendars' => $calendars]);
     }
 
     /**
@@ -26,7 +27,10 @@ class failureRequestController extends Controller
      */
     public function create()
     {
-        return view('customer/malfunction/create');
+        $companies = \App\CompanyDetail::all();
+        $users = User::where('role_id', '4');
+        dd($users);
+        return view('maintenance/calendar/create');
     }
 
     /**
@@ -37,12 +41,7 @@ class failureRequestController extends Controller
      */
     public function store(Request $request)
     {
-        $company = CompanyDetail::where('user_id',$request->user()->id)->first();
-        \App\Malfunction::insert([
-            'company_id'     => $company->id,
-            'description'    => $request->description
-        ]);
-        return redirect()->route('home');
+        dd($request->type);
     }
 
     /**
@@ -53,10 +52,7 @@ class failureRequestController extends Controller
      */
     public function show($id)
     {
-        $malfunction = \App\Malfunction::find($id);
-        $company = \App\CompanyDetail::find($malfunction->company_id);
-        $user = \App\User::find($company->user_id);
-        return view('maintenance/malfunction/show', ['malfunction' => $malfunction, 'company' => $company, 'user' => $user]);
+        //
     }
 
     /**
