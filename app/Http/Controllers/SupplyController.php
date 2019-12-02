@@ -55,6 +55,7 @@ class SupplyController extends Controller
 
         $prices = array();
         $finalprice = 0;
+
         foreach ($amount as $supply_id => $singleamount) {
 
 
@@ -62,21 +63,21 @@ class SupplyController extends Controller
 
 
             $supplies = Supply::find($supply_id);
-
-            $supplies->amount += $singleamount;
-
+            //$supplies->amount += $singleamount;
 
 
 
 
-            $supplies->save();
+
+
+
+
+
 
             //$prices['Aantal'] = $singleamount;
 
 
                 if ($singleamount != null) {
-
-                    //echo $supplies->price;
 
                     $prices[$supplies->name]=  $supplies->price * $singleamount;
 
@@ -100,21 +101,15 @@ class SupplyController extends Controller
                 //->limit(1)  // optional - to ensure only one record is updated.
                 ->update(array('amount' => +$oneamount));  // */
         }
+        //dd($finalprice);
 
-        $prices['Totaal'] = $finalprice;
 
-
-        //dd($prices);
-
-        /*foreach ($prices as $supplyName => $supplyPrice) {
-
+      /*  if($finalprice >= 5000) {
 
         }*/
 
 
-
-
-            //dd($finalprice);
+        $prices['Totaal'] = $finalprice;
 
 
         if($finalprice > 5000) {
@@ -127,6 +122,20 @@ class SupplyController extends Controller
 
                 return (  new \App\Mail\CeoMail($prices))->render();
         }
+        else {
+
+            foreach ($amount as $supply_id => $singleamount) {
+
+
+                $supplies = Supply::find($supply_id);
+                $supplies->amount += $singleamount;
+
+
+                $supplies->save();
+
+            }
+        }
+
 
         //return (  new \App\Mail\CeoMail($supplies))->render();
 

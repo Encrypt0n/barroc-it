@@ -1,5 +1,5 @@
 @component('mail::message')
-    # Nieuwe prijsopgrave
+    # Nieuwe offerte
     Bedrijfsnaam: {{$info->companyname}}
 
 
