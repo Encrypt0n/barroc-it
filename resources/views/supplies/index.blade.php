@@ -23,6 +23,14 @@
             @endforeach
 
         </table>
+        
+        <form action="{{ route('supplies.create') }}">
+                            @csrf
+                            <div class="form-group">
+        
+                                <input class="centered-button" type="submit" value="Bijbestellen">
+                            </div>
+                        </form>
         {{--{{$products->links()}}--}}
     </div>
 @endsection

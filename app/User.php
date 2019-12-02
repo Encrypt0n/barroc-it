@@ -36,10 +36,10 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
-<<<<<<< Updated upstream
-    public function Role() {
+
+    public function Role(){
         return $this->Hasone('\App\Role', 'id');
-=======
+    }
 
     public function customers(){
         return $this->hasMany('\App\Lease', 'customer_id');
@@ -48,6 +48,6 @@ class User extends Authenticatable
 
     public function finances(){
         return $this->hasMany('\App\Lease', 'finance_id');
->>>>>>> Stashed changes
+
     }
 }
