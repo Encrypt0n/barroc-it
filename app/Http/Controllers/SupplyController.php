@@ -3,9 +3,14 @@
 namespace App\Http\Controllers;
 
 use App\Supply;
+<<<<<<< Updated upstream
 use Illuminate\Database\Eloquent\Collection;
 use Illuminate\Http\Request;
 use function Sodium\library_version_major;
+=======
+use App\SupplyCategory;
+use Illuminate\Http\Request;
+>>>>>>> Stashed changes
 
 class SupplyController extends Controller
 {
@@ -16,11 +21,16 @@ class SupplyController extends Controller
      */
     public function index()
     {
+<<<<<<< Updated upstream
         //
         $supplies = Supply::all();
 
 
 
+=======
+        $supplies = Supply::all();
+
+>>>>>>> Stashed changes
         return view('supplies.index', ['supplies' => $supplies]);
     }
 
@@ -32,10 +42,13 @@ class SupplyController extends Controller
     public function create()
     {
         //
+<<<<<<< Updated upstream
         $supplies = Supply::all();
 
         return view('supplies.create', ['supplies' => $supplies]);
 
+=======
+>>>>>>> Stashed changes
     }
 
     /**
@@ -46,6 +59,7 @@ class SupplyController extends Controller
      */
     public function store(Request $request)
     {
+<<<<<<< Updated upstream
         //dd($request->all());
         //
 
@@ -138,6 +152,9 @@ class SupplyController extends Controller
 
         return view('/home');
 
+=======
+        //
+>>>>>>> Stashed changes
     }
 
     /**
@@ -148,7 +165,11 @@ class SupplyController extends Controller
      */
     public function show(Supply $supply)
     {
+<<<<<<< Updated upstream
         //
+=======
+
+>>>>>>> Stashed changes
     }
 
     /**
@@ -159,7 +180,13 @@ class SupplyController extends Controller
      */
     public function edit(Supply $supply)
     {
+<<<<<<< Updated upstream
         //
+=======
+        $supplyCategories = SupplyCategory::all();
+
+        return view('supplies.edit', ['supply' => $supply , 'supplyCategories' => $supplyCategories]);
+>>>>>>> Stashed changes
     }
 
     /**
@@ -171,7 +198,18 @@ class SupplyController extends Controller
      */
     public function update(Request $request, Supply $supply)
     {
+<<<<<<< Updated upstream
         //
+=======
+        $supply->update([
+            'name'                  => $request->name,
+            'price'                 => $request->price,
+            'supply_categories_id'  => $request->supply_categories_id,
+            'updated_at'            => now()
+        ]);
+
+        return redirect()->action('SupplyController@index');
+>>>>>>> Stashed changes
     }
 
     /**

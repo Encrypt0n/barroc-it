@@ -15,11 +15,16 @@ class CreateSuppliesTable extends Migration
     {
         Schema::create('supplies', function (Blueprint $table) {
             $table->bigIncrements('id');
+            $table->unsignedBigInteger('supply_categories_id');
             $table->string('name');
             $table->decimal('price');
             $table->bigInteger('product_categories_id');
             $table->smallInteger('amount');
             $table->timestamps();
+
+            $table->foreign('supply_categories_id')
+                ->references('id')
+                ->on('supply_categories');
         });
     }
 

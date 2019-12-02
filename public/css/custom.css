@@ -506,6 +506,7 @@ main {
 .not-in-stock{
     color:  #ff3300;
 }
+<<<<<<< Updated upstream
 .products{
     /*display: grid;*/
     /*grid-template-columns: 75% 25%;*/
@@ -517,6 +518,20 @@ main {
     grid-template-columns: 75% 25%;
     /*grid-template-rows: auto;*/
     border: solid 1px #000;
+=======
+
+.supply-table{
+    width: inherit;
+}
+
+.supply-table td{
+    padding: 2.5% 10% 2.5% 0;
+    border-bottom: 1px solid #000;
+}
+
+.supply-table th{
+    padding: 0;
+>>>>>>> Stashed changes
 }
 .product p{
     margin: 0;
