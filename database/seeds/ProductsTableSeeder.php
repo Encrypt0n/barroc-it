@@ -102,6 +102,7 @@ class ProductsTableSeeder extends Seeder
 
 
 
+<<<<<<< Updated upstream
         //}
 
        /* $productCategories = \App\supplyCategory::all()->count();
@@ -117,5 +118,8 @@ class ProductsTableSeeder extends Seeder
             ]);
         }*/
 
+=======
+        //
+>>>>>>> Stashed changes
     }
 }
