@@ -1,22 +1,36 @@
-@extends('app')
+@extends('dashboard')
 @section('content')
     <div class="container">
-        <div class="products">
+        <table class="supply-table">
+            <tr>
+                <th>Product Naam</th>
+                <th>Voorraad</th>
+                <th>Hoeveelheid</th>
+                <th>Categorie</th>
+            </tr>
             @foreach($supplies as $supply)
-                <div class="product">
-                    <div class="product-name">
-                        <a href="{{route('supplies.index', $supply->id )}}">{{$supply->name}}</a>
-                    </div>
-                    <div class="product-availability">
-                        @if($supply->amount > 0)
-                            <p><span class="in-stock">Op voorraad</span> {{$supply->amount}}</p>
-                        @else
-                            <p class="not-in-stock">Niet beschikbaar</p>
-                        @endif
-                    </div>
-                </div>
-                @endforeach
-        </div>
+             <tr>
+                <td>{{$supply->name}}</td>
+                @if($supply->amount > 0)
+                     <td class="in-stock">Op voorraad</td>
+                    @else
+                    <td class="not-in-stock">Niet beschikbaar</td>
+                    @endif
+                 <td>{{$supply->amount}}</td>
+                <td>{{$supply->supplyCategory->name}}</td>
+                    <td><a href="{{route('supplies.edit', $supply->id)}}">Bewerk</a></td>
+             </tr>
+            @endforeach
 
+        </table>
+        
+        <form action="{{ route('supplies.create') }}">
+                            @csrf
+                            <div class="form-group">
+        
+                                <input class="centered-button" type="submit" value="Bijbestellen">
+                            </div>
+                        </form>
+        {{--{{$products->links()}}--}}
     </div>
 @endsection

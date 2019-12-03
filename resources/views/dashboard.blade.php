@@ -48,6 +48,7 @@
                 @if (Auth::user()->role == 3)
                     <a class="dashboard-link" href="{{ route('createQuotation.create') }}">Prijsopgave aanmaken</a>
                     <div class="yellow-splitter-line"></div>
+                    <a class="dashboard-link" href="{{ route('customer.create') }}">Gebruiker toevoegen</a>
                 @endif
                 {{-- Klant --}}
                 @if (Auth::user()->role == 0)
@@ -72,7 +73,7 @@
 
                 {{-- Supplies--}}
                 @if (Auth::user()->role == 4)
-                    <a class="dashboard-link" href="{{ route('supplies.create') }}">Producten bij bestellen</a>
+                    <a class="dashboard-link" href="{{ route('supplies.index') }}">Voorraad overzicht</a>
                     <div class="yellow-splitter-line"></div>
                 @endif
 

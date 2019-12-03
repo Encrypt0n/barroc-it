@@ -2,9 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\Lease;
 use Illuminate\Http\Request;
 
-class jobTicketController extends Controller
+class LeaseController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -13,7 +14,11 @@ class jobTicketController extends Controller
      */
     public function index()
     {
-        //
+        $leases = Lease::all();
+
+
+//        dd($leases);
+        return view('leases.index', ['leases' => $leases]);
     }
 
     /**
@@ -23,8 +28,7 @@ class jobTicketController extends Controller
      */
     public function create()
     {
-        $supplies = \App\Supply::all();
-        return view('Maintenance/create', ['supplies' => $supplies]);
+        return view('leases.create');
     }
 
     /**
@@ -35,16 +39,16 @@ class jobTicketController extends Controller
      */
     public function store(Request $request)
     {
-        dd($request);
+        //
     }
 
     /**
      * Display the specified resource.
      *
-     * @param  int  $id
+     * @param  \App\Lease  $lease
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show(Lease $lease)
     {
         //
     }
@@ -52,10 +56,10 @@ class jobTicketController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  int  $id
+     * @param  \App\Lease  $lease
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(Lease $lease)
     {
         //
     }
@@ -64,10 +68,10 @@ class jobTicketController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
+     * @param  \App\Lease  $lease
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, Lease $lease)
     {
         //
     }
@@ -75,10 +79,10 @@ class jobTicketController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  int  $id
+     * @param  \App\Lease  $lease
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(Lease $lease)
     {
         //
     }

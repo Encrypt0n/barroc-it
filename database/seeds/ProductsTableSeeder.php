@@ -13,7 +13,8 @@ class ProductsTableSeeder extends Seeder
     {
         //
         $faker = \Faker\Factory::create();
-        $productCategories = \App\ProductCategory::all()->count();
+<<<<<<< Updated upstream
+        //$productCategories = \App\ProductCategory::all()->count();
 
         //for ($i = 0; $i < 25; $i++) {
 
@@ -102,5 +103,19 @@ class ProductsTableSeeder extends Seeder
 
 
         //}
+=======
+        $productCategories = \App\supplyCategory::all()->count();
+
+        for ($i = 0; $i < 25; $i++) {
+            \App\Supply::insert([
+                'name'                =>$faker->word,
+                'supply_categories_id' =>rand(1, $productCategories),
+                'price'                 =>$faker->randomFloat('2', '1', '999'),
+                'amount'                =>$faker->randomNumber('2'),
+                'created_at'            => now(),
+                'updated_at'            => now()
+            ]);
+        }
+>>>>>>> Stashed changes
     }
 }

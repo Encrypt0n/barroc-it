@@ -3,9 +3,14 @@
 namespace App\Http\Controllers;
 
 use App\Supply;
+
 use Illuminate\Database\Eloquent\Collection;
 use Illuminate\Http\Request;
 use function Sodium\library_version_major;
+
+use App\SupplyCategory;
+
+
 
 class SupplyController extends Controller
 {
@@ -16,10 +21,7 @@ class SupplyController extends Controller
      */
     public function index()
     {
-        //
         $supplies = Supply::all();
-
-
 
         return view('supplies.index', ['supplies' => $supplies]);
     }
@@ -31,11 +33,9 @@ class SupplyController extends Controller
      */
     public function create()
     {
-        //
         $supplies = Supply::all();
 
         return view('supplies.create', ['supplies' => $supplies]);
-
     }
 
     /**
@@ -46,8 +46,6 @@ class SupplyController extends Controller
      */
     public function store(Request $request)
     {
-        //dd($request->all());
-        //
         $amount = $request->amount;
 
         $name = $request->name;
@@ -55,8 +53,9 @@ class SupplyController extends Controller
 
 
 
-
+        $prices = array();
         $finalprice = 0;
+
         foreach ($amount as $supply_id => $singleamount) {
 
 
@@ -64,22 +63,28 @@ class SupplyController extends Controller
 
 
             $supplies = Supply::find($supply_id);
-
-            $supplies->amount += $singleamount;
-
+            //$supplies->amount += $singleamount;
 
 
 
 
-            $supplies->save();
 
+
+
+
+
+
+            //$prices['Aantal'] = $singleamount;
 
 
                 if ($singleamount != null) {
 
+                    $prices[$supplies->name]=  $supplies->price * $singleamount;
 
 
+                   // $supplyname = $supplies->name;
                     $finalprice += $supplies->price * $singleamount;
+
 
 
 
@@ -90,25 +95,53 @@ class SupplyController extends Controller
 
 
 
+
             /*\DB::table('supplies')
                 ->where('id', $supply_id)// find your user by their email
                 //->limit(1)  // optional - to ensure only one record is updated.
                 ->update(array('amount' => +$oneamount));  // */
         }
+        //dd($finalprice);
+
+
+      /*  if($finalprice >= 5000) {
+
+        }*/
+
+
+        $prices['Totaal'] = $finalprice;
+
+
+        if($finalprice > 5000) {
+
+
+            // return ( view: mailToCeo, $supplies ->
 
 
 
-        dd($finalprice);
 
-        if($finalprice >= 5000) {
-
-
+                return (  new \App\Mail\CeoMail($prices))->render();
         }
+        else {
+
+            foreach ($amount as $supply_id => $singleamount) {
+
+
+                $supplies = Supply::find($supply_id);
+                $supplies->amount += $singleamount;
+
+
+                $supplies->save();
+
+            }
+        }
+
 
         //return (  new \App\Mail\CeoMail($supplies))->render();
 
-        //return view('supplies.show', ['supplies' => $supplies]);
+        //return view('supplies.index', ['supplies' => $supplies]);
 
+        return view('/home');
     }
 
     /**
@@ -119,7 +152,7 @@ class SupplyController extends Controller
      */
     public function show(Supply $supply)
     {
-        //
+
     }
 
     /**
@@ -130,7 +163,11 @@ class SupplyController extends Controller
      */
     public function edit(Supply $supply)
     {
-        //
+
+        $supplyCategories = SupplyCategory::all();
+
+        return view('supplies.edit', ['supply' => $supply , 'supplyCategories' => $supplyCategories]);
+
     }
 
     /**
@@ -142,7 +179,16 @@ class SupplyController extends Controller
      */
     public function update(Request $request, Supply $supply)
     {
-        //
+
+        $supply->update([
+            'name'                  => $request->name,
+            'price'                 => $request->price,
+            'supply_categories_id'  => $request->supply_categories_id,
+            'updated_at'            => now()
+        ]);
+
+        return redirect()->action('SupplyController@index');
+
     }
 
     /**

@@ -1,23 +1,4 @@
-<form action="{{ route('supplies.store')}}" method="post">
+@extends('app')
+@section('content')
 
-    @csrf
-
-
-            @foreach ($supplies as $supply)
-
-
-                <div class="orderitem">
-                    <label for="italianLight" name="name">{{$supply->name}}</label>
-                    <input type="text" name="amount[{{$supply->id}}]"  >
-
-
-                </div>
-
-
-
-
-            @endforeach
-
-
-                <input type="submit" value="Order">
-    </form>
+@endsection

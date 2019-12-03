@@ -1,9 +1,13 @@
 @component('mail::message')
-    # Nieuwe prijsopgrave
+    # Bestelling boven 5000
 
-    @foreach($toohigh as $singletoohigh)
-    Bedrijfsnaam: {{$singletoohigh->price}}
-    @endforeach
+
+    Er is een bestelling geplaatst van
+    @foreach($toohigh as $name => $singletoohigh)
+        {{$name}}
+        € {{$singletoohigh}}
+
+                    @endforeach
 
 
 

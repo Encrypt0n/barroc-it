@@ -2,13 +2,12 @@
 
 namespace App\Mail;
 
-use http\Env\Request;
 use Illuminate\Bus\Queueable;
 use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Mail\Mailable;
 use Illuminate\Queue\SerializesModels;
 
-class CeoMail extends Mailable
+class jobTicketMail extends Mailable
 {
     use Queueable, SerializesModels;
 
@@ -19,8 +18,7 @@ class CeoMail extends Mailable
      */
     public function __construct($request)
     {
-        //
-        $this->request = $request;
+        $this->mailData = $request;
     }
 
     /**
@@ -30,7 +28,6 @@ class CeoMail extends Mailable
      */
     public function build()
     {
-        //return $this->view('view.name');
-        return $this->markdown('emails.ceoheadsup')->with('toohigh' , $this->request);
+        return $this->markdown('emails.jobTicket')->with('mailData', $this->mailData);
     }
 }
