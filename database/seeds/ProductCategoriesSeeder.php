@@ -15,15 +15,15 @@ class ProductCategoriesSeeder extends Seeder
        // $faker = \Faker\Factory::create();
 
         //for ($i = 0; $i < 5; $i++) {
-        \DB::table('product_categories')->insert([
-                'id'   => 1,
+        \DB::table('supply_categories')->insert([
+                //'id'   => 1,
                 'name' => 'machines',
                 'created_at' => now(),
                 'updated_at' => now()
             ]);
 
-        \DB::table('product_categories')->insert([
-            'id'   => 2,
+        \DB::table('supply_categories')->insert([
+            //'id'   => 2,
             'name' => 'beans',
             'created_at' => now(),
             'updated_at' => now()
