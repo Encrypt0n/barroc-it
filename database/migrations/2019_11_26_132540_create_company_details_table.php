@@ -19,6 +19,8 @@ class CreateCompanyDetailsTable extends Migration
             $table->string('name');
             $table->string('email');
             $table->string('address');
+            $table->text('note')->nullable();
+            $table->integer('bkr')->default(0);
             $table->timestamps();
 
             $table->foreign('user_id')

@@ -15,7 +15,8 @@ class CompanyDetailsTableSeeder extends Seeder
             'user_id'       => '3',
             'name'          => 'Test Company',
             'email'         => 'testcompany@gmail.com',
-            'address'       => 'teststraat 48'
+            'address'       => 'teststraat 48',
+            'note'          => 'Testing opmerking...'
         ]);
     }
 }

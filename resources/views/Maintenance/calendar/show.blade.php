@@ -2,7 +2,7 @@
 @section('content')
     <div class="dashboard-title-container">
         <div class="dashboard-title">
-            <h2><span class="title-highlighted-dash">-</span> {{ $calendar->CalendarType->name }} / {{ $calendar->date }} / {{ $calendar->Company->name }}<span class="title-highlighted-dash">-</span> </h2>
+            <h2><span class="title-highlighted-dash">-</span> {{ $calendar->CalendarType->name }} / {{ $calendar->date }} / {{ $calendar->Company->name }} <span class="title-highlighted-dash">-</span> </h2>
         </div>
     </div>
     <div class="dashboard-detail-container">

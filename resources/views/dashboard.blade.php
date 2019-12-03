@@ -58,6 +58,7 @@
                 @if (Auth::user()->role == 1)
                     <a class="dashboard-link" href="{{ route('reviewQuotation.index') }}">Offerte overzicht</a>
                     <div class="yellow-splitter-line"></div>
+                    <a class="dashboard-link" href="{{ route('customerEdit.index') }}">Klanten overzicht</a>
                 @endif
 
                 {{-- Maintenance--}}
@@ -73,7 +74,6 @@
                 @if (Auth::user()->role == 4)
                     <a class="dashboard-link" href="{{ route('supplies.create') }}">Producten bij bestellen</a>
                     <div class="yellow-splitter-line"></div>
-
                 @endif
 
 

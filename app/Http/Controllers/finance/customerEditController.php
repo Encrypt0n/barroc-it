@@ -1,13 +1,11 @@
 <?php
 
-namespace App\Http\Controllers\maintenance;
+namespace App\Http\Controllers\finance;
 
 use App\Http\Controllers\Controller;
-use App\User;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\App;
 
-class calendarController extends Controller
+class customerEditController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -16,8 +14,8 @@ class calendarController extends Controller
      */
     public function index()
     {
-        $calendars = \App\Calendar::all();
-        return view('maintenance/calendar/index', ['calendars' => $calendars]);
+        $companies = \App\CompanyDetail::all();
+        return view('finance/customers/index', ['companies' => $companies]);
     }
 
     /**
@@ -27,9 +25,7 @@ class calendarController extends Controller
      */
     public function create()
     {
-        $companies = \App\CompanyDetail::all();
-        $users = \App\User::all();
-        return view('maintenance/calendar/create', ['companies' => $companies, 'users' => $users]);
+        //
     }
 
     /**
@@ -40,15 +36,7 @@ class calendarController extends Controller
      */
     public function store(Request $request)
     {
-        \App\Calendar::insert([
-            'type_id'        => $request->type,
-            'company_id'     => $request->company_id,
-            'maintenance_id' => $request->user_id,
-            'date'           => $request->date,
-            'to_repair'      => $request->to_repair,
-            'to_use'         => $request->to_use
-        ]);
-        return redirect()->route('calendar.index');
+        //
     }
 
     /**
@@ -59,8 +47,8 @@ class calendarController extends Controller
      */
     public function show($id)
     {
-        $calendar = \App\Calendar::find($id);
-        return view('maintenance/calendar/show', ['calendar' => $calendar]);
+        $company = \App\CompanyDetail::find($id);
+        return view('finance/customers/show', ['company' => $company]);
     }
 
     /**
@@ -71,7 +59,8 @@ class calendarController extends Controller
      */
     public function edit($id)
     {
-        //
+        $company = \App\CompanyDetail::find($id);
+        return view('finance/customers/edit', ['company' => $company]);
     }
 
     /**
@@ -83,7 +72,16 @@ class calendarController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        if ($request->bkr != null) {
+            $bkr = 2;
+        }
+        else {
+            $bkr = 1;
+        }
+        \App\CompanyDetail::find($id)->update([
+            'bkr'        => $bkr
+        ]);
+        return redirect()->route('customerEdit.show', $id);
     }
 
     /**

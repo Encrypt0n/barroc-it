@@ -26,6 +26,7 @@ Route::resource('supplies', 'SupplyController');
 Route::resource('jobTicket', 'jobTicketController');
 Route::resource('/failureRequest', 'customer\failureRequestController');
 Route::resource('/calendar', 'maintenance\calendarController');
+Route::resource('/customerEdit', 'finance\customerEditController');
 Route::get('/home', 'HomeController@index')->name('home');
 Route::get('customerCreate', 'customerController@create');
 //Route::get('reviewindexQuotation', 'finance\quotationreviewController@index');
