@@ -1,11 +1,11 @@
 <?php
 
-namespace App\Http\Controllers\finance;
+namespace App\Http\Controllers\customer;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 
-class customerEditController extends Controller
+class customerDetailController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -14,8 +14,8 @@ class customerEditController extends Controller
      */
     public function index()
     {
-        $companies = \App\CompanyDetail::all();
-        return view('finance/customers/index', ['companies' => $companies]);
+        $company = \App\CompanyDetail::where('user_id', Auth()->user()->id)->first();
+        return view('customer/details/index', ['company' => $company]);
     }
 
     /**
@@ -47,8 +47,7 @@ class customerEditController extends Controller
      */
     public function show($id)
     {
-        $company = \App\CompanyDetail::find($id);
-        return view('finance/customers/show', ['company' => $company]);
+        //
     }
 
     /**
@@ -59,8 +58,8 @@ class customerEditController extends Controller
      */
     public function edit($id)
     {
-        $company = \App\CompanyDetail::find($id);
-        return view('finance/customers/edit', ['company' => $company]);
+        $company = \App\CompanyDetail::find($id)->first();
+        return view('customer/details/edit', ['company' => $company]);
     }
 
     /**
@@ -72,17 +71,18 @@ class customerEditController extends Controller
      */
     public function update(Request $request, $id)
     {
-        if ($request->bkr != null) {
-            $bkr = 2;
-        }
-        else {
-            $bkr = 1;
-        }
-        \App\CompanyDetail::find($id)->update([
-            'bkr'        => $bkr,
-            'note'       => $request->note
+        // I tried to use a model to update company but it didn't work so i use the save function
+        $company = \App\CompanyDetail::find($id);
+        $company->name = $request->company_name;
+        $company->email = $request->company_email;
+        $company->address = $request->company_address;
+        $company->note = $request->note;
+        $company->save();
+        \App\User::find($request->user_id)->update([
+            'name'        => $request->user_name,
+            'email'       => $request->user_email
         ]);
-        return redirect()->route('customerEdit.show', $id);
+        return redirect()->route('customerDetail.index');
     }
 
     /**

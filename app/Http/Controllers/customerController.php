@@ -47,8 +47,6 @@ class customerController extends Controller
      */
     public function store(Request $request)
     {
-        //
-
         $contactname = $request->input('contactname');
         $email = $request->input('email');
         $password = $request->input('password');
@@ -57,46 +55,25 @@ class customerController extends Controller
             'name' => $contactname,
             'email' => $email,
             'password' => Hash::make($password)
-
-
         ]);
-
-
-
-
-
-
-
-
-
-
         $user = \DB::table('users')
         ->where('email', $email)
         ->first();
 
        // $user = \App\User::where('email', $email->first());
 
-
-
-
-
-
-
-
         $companyname = $request->input('companyname');
         $workemail = $request->input('workemail');
         $address = $request->input('address');
 
-        \DB::table('companydetails')->insert([
+        \DB::table('company_details')->insert([
             'name' => $companyname,
             'email' => $workemail,
             'address' => $address,
             'user_id' => $user->id
         ]);
-
-
-
-
+//        $account = array(['email' => $email, 'password' => $password]);
+        return ( new \App\Mail\RegisterMail(['email' => $email, 'password' => $password]) )->render();
     }
 
     /**
