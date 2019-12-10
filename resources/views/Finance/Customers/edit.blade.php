@@ -12,12 +12,15 @@
                 @csrf
                 @method('PUT')
                 <div class="form-group">
-                    <label for="description">BKR Check voldaan: </label>
-                    @if ($company->bkr == 2)
-                        <input type="checkbox" name="bkr" value="bkr" checked>
-                    @else
-                        <input type="checkbox" name="bkr" value="bkr">
+                    @if (Auth::user()->role != 3)
+                        <label for="description">BKR Check voldaan: </label>
+                        @if ($company->bkr == 2)
+                            <input type="checkbox" name="bkr" value="bkr" checked>
+                        @else
+                            <input type="checkbox" name="bkr" value="bkr">
+                        @endif
                     @endif
+                    <textarea name="note" placeholder="Opmerking"></textarea>
                     <input class="centered-button" type="submit" value="Klant aanpassen">
                 </div>
             </form>

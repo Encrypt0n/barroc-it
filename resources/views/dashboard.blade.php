@@ -49,11 +49,14 @@
                     <a class="dashboard-link" href="{{ route('createQuotation.create') }}">Prijsopgave aanmaken</a>
                     <div class="yellow-splitter-line"></div>
                     <a class="dashboard-link" href="{{ route('customer.create') }}">Gebruiker toevoegen</a>
+                    <div class="yellow-splitter-line"></div>
+                    <a class="dashboard-link" href="{{ route('customerEdit.index') }}">Klanten overzicht</a>
                 @endif
                 {{-- Klant --}}
                 @if (Auth::user()->role == 0)
                     <a class="dashboard-link" href="{{ route('failureRequest.create') }}">Storing melding</a>
                     <div class="yellow-splitter-line"></div>
+                    <a class="dashboard-link" href="{{ route('customerDetail.index') }}">Gegevens</a>
                 @endif
                 {{-- Finance --}}
                 @if (Auth::user()->role == 1)
