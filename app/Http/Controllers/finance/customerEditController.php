@@ -76,6 +76,14 @@ class customerEditController extends Controller
      */
     public function update(Request $request, $id)
     {
+        if ($request->accepted != null) {
+            $accepted = 1;
+        }
+        \App\Quotations::find($id)->update([
+            'accepted'        => $accepted,
+            //'note'       => $request->note
+        ]);
+
         if ($request->ignore_bkr == null) {
             if ($request->bkr != null) {
                 $bkr = 2;
