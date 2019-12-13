@@ -18,10 +18,6 @@ class CreateSuppliesTable extends Migration
             $table->unsignedBigInteger('supply_categories_id');
             $table->string('name');
             $table->decimal('price');
-<<<<<<< Updated upstream
-
-=======
->>>>>>> Stashed changes
             $table->smallInteger('amount');
             $table->timestamps();
 
