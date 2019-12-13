@@ -72,11 +72,16 @@ class customerEditController extends Controller
      */
     public function update(Request $request, $id)
     {
-        if ($request->bkr != null) {
-            $bkr = 2;
+        if ($request->ignore_bkr == null) {
+            if ($request->bkr != null) {
+                $bkr = 2;
+            }
+            else {
+                $bkr = 1;
+            }
         }
         else {
-            $bkr = 1;
+            $bkr = 0;
         }
         \App\CompanyDetail::find($id)->update([
             'bkr'        => $bkr,

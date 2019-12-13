@@ -443,7 +443,6 @@ main {
     text-decoration: none;
     color: #2d73b1;
 }
-
 /* ================================================================== */
 /*                              footer                                */
 /* ================================================================== */
@@ -469,6 +468,96 @@ main {
 }
 .footer-container-horizontal p, .footer-container-horizontal a {
     margin: 10px 0 0 0;
+}
+/* ================================================================== */
+/*                               Finance                              */
+/* ================================================================== */
+.form-container {
+    display: flex;
+    justify-content: center;
+}
+.form-container-wrapper {
+    display: flex;
+    justify-content: center;
+    width: 50%;
+}
+.finance-customer-form {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    width: 100%;
+}
+.finance-customer-form-checkbox-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+.finance-customer-form-textarea {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+/* ================================================================== */
+/*                               Form                                 */
+/* ================================================================== */
+.form-textarea {
+    border: #212121 1px solid;
+    border-radius: .25rem;
+    margin-bottom: 20px;
+}
+.form-label {
+    font-weight: bolder;
+    font-size: 1.1em;
+}
+.form-date {
+    width: 30%;
+    height: 40px;
+    padding: 5px 15px 5px 15px;
+    border: #212121 solid 1px;
+    border-radius: 30px;
+    margin: 0 0 10px 0;
+}
+.form-select {
+    width: 30%;
+    height: 40px;
+    padding: 5px 15px 5px 15px;
+    border: #212121 solid 1px;
+    border-radius: 30px;
+    margin: 0 0 10px 0;
+}
+.form-select:hover, .form-date:hover {
+    cursor: pointer;
+    text-decoration: none;
+}
+.form-splitter {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    margin-bottom: 20px;
+}
+.form-splitter-item {
+    width: 48%;
+}
+.form-splitter-item h2 {
+    text-align: center;
+    font-size: 1.4em;
+}
+.form-text {
+    border: #212121 1px solid;
+    padding: 10px;
+    border-radius: .25rem;
+    margin-bottom: 20px;
+}
+/* ================================================================== */
+/*                               Maintenance                          */
+/* ================================================================== */
+.maintenance-calendar-form-label-split {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
 }
 /* ================================================================== */
 /*                            quotation content                       */
@@ -503,7 +592,6 @@ main {
 /* ================================================================== */
 /*                            supplies content                        */
 /* ================================================================== */
-
 .in-stock{
     color: #00cc66;
 }
@@ -525,15 +613,12 @@ main {
 .supply-table{
     width: inherit;
 }
-
 .supply-table td{
     padding: 2.5% 10% 2.5% 0;
     border-bottom: 1px solid #000;
 }
-
 .supply-table th{
     padding: 0;
->>>>>>> Stashed changes
 }
 .product p{
     margin: 0;

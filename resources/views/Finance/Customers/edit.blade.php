@@ -7,22 +7,27 @@
     </div>
     <div class="form-container">
         <div class="form-container-wrapper">
-            <h2>Klant aanpassen</h2>
-            <form action="{{ route('customerEdit.update', $company->id) }}" method="post">
+            <form class="finance-customer-form" action="{{ route('customerEdit.update', $company->id) }}" method="post">
                 @csrf
                 @method('PUT')
-                <div class="form-group">
-                    @if (Auth::user()->role != 3)
-                        <label for="description">BKR Check voldaan: </label>
+                <div class="finance-customer-form-checkbox-container">
+                    @if (Auth::user()->role != 1)
+                        <input type="hidden" name="ignore_bkr" value="1">
+                    @endif
+                    @if (Auth::user()->role == 1)
+                        <label class="form-label" for="bkr">BKR Check voldaan: </label>
                         @if ($company->bkr == 2)
                             <input type="checkbox" name="bkr" value="bkr" checked>
                         @else
                             <input type="checkbox" name="bkr" value="bkr">
                         @endif
                     @endif
-                    <textarea name="note" placeholder="Opmerking"></textarea>
-                    <input class="centered-button" type="submit" value="Klant aanpassen">
                 </div>
+                <div class="finance-customer-form-textarea">
+                    <label class="form-label" for="note">Opmerking:</label>
+                    <textarea class="form-textarea" name="note">{{ $company->note }}</textarea>
+                </div>
+                <input class="centered-button" type="submit" value="Klant aanpassen">
             </form>
         </div>
     </div>
