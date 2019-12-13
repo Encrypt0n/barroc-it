@@ -5,43 +5,63 @@
             @csrf
             <h1>Offerte aanvragen</h1>
 
+
+
+            <select name="shipchoice">
+
+
+                @foreach ($customers
+
+                         as $customer) {
+
+                    "<option value="{{$customer->id}}">"{{$customer->name}}"</option>";
+                }
+            @endforeach
+
+
+
+
+            </select>
+
+
+
                     {{--contactinformatie--}}
-        <div class="contact">
-            <div class="contactItem">
-                    <label for="companyName">Bedrijfsnaam</label>
-                    <input type="text" name="companyName">
-            </div>
+{{--        <div class="contact">--}}
+{{--            <div class="contactItem">--}}
+{{--                    <label for="companyName">Bedrijfsnaam</label>--}}
+{{--                    <input type="text" name="companyName">--}}
+{{--            </div>--}}
 
-            <div class="contactItem">
-                    <label for="address">Adres</label>
-                    <input type="text" name="companyAddress">
-            </div>
+{{--            <div class="contactItem">--}}
+{{--                    <label for="address">Adres</label>--}}
+{{--                    <input type="text" name="companyAddress">--}}
+{{--            </div>--}}
 
-            <div class="contactItem">
-                    <label for="phoneNumber">Telefoonnummer</label>
-                    <input type="text" name="companyPhoneNumber">
-            </div>
+{{--            <div class="contactItem">--}}
+{{--                    <label for="phoneNumber">Telefoonnummer</label>--}}
+{{--                    <input type="text" name="companyPhoneNumber">--}}
+{{--            </div>--}}
 
-            <div class="contactItem">
-                    <label for="email">Email adres</label>
-                    <input type="text" name="companyEmail">
-            </div>
+{{--            <div class="contactItem">--}}
+{{--                    <label for="email">Email adres</label>--}}
+{{--                    <input type="text" name="companyEmail">--}}
+{{--            </div>--}}
 
-            <div class="contactItem">
-                    <label for="contactPerson">Contactpersoon</label>
-                    <input type="text" name="contactPerson">
-            </div>
+{{--            <div class="contactItem">--}}
+{{--                    <label for="contactPerson">Contactpersoon</label>--}}
+{{--                    <input type="text" name="contactPerson">--}}
+{{--            </div>--}}
 
-            <div class="contactItem">
-                    <label for="contactPersonPhone">Contactp. telefoonnummer</label>
-                    <input type="text" name="contactPersonPhone">
-            </div>
+{{--            <div class="contactItem">--}}
+{{--                    <label for="contactPersonPhone">Contactp. telefoonnummer</label>--}}
+{{--                    <input type="text" name="contactPersonPhone">--}}
+{{--            </div>--}}
 
-            <div class="contactItem">
-                    <label for="contactPersonEmail">Contactp. email adres</label>
-                    <input type="text" name="contactPersonEmail">
-            </div>
-        </div>
+{{--            <div class="contactItem">--}}
+{{--                    <label for="contactPersonEmail">Contactp. email adres</label>--}}
+{{--                    <input type="text" name="contactPersonEmail">--}}
+{{--            </div>--}}
+{{--        </div>--}}
                             {{--bestelling--}}
         <div class="orders">
             <div class="orderitem">

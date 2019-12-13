@@ -37,6 +37,23 @@ class User extends Authenticatable
         'email_verified_at' => 'datetime',
     ];
 
+    public function companydetail() {
+        return $this->hasOne('\App\CompanyDetail', 'user_id');
+    }
+
+
+
+
+
+
+    public function invoice() {
+        return $this->hasMany('\App\Invoice', 'lease_id');
+    }
+
+    public function lease() {
+        return $this->hasMany('\App\Lease', 'customer_id');
+    }
+
     public function Role(){
         return $this->Hasone('\App\Role', 'id');
     }

@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\CompanyDetail;
 use App\Quotations;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\App;
@@ -25,7 +26,9 @@ class createQuotationController extends Controller
      */
     public function create()
     {
-        return view('sales/createQuotation');
+        $customers = \App\CompanyDetail::all();
+
+        return view('sales/createQuotation', ['customers' => $customers]);
     }
 
     /**
@@ -36,14 +39,49 @@ class createQuotationController extends Controller
      */
     public function store(Request $request)
     {
+       // dd($request->customer);
+
+       $customer = $request->customer;
+
+
+
+        //foreach ($customer as $) {
+            $companies = CompanyDetail::find($customer);
+            //$customer_detail = User::find()
+            //dd($customer);
+
+            $company_id = $companies->id;
+            $companyname = $companies->name;
+
+
+
+            $companyaddress = $companies->address;
+
+            $user = $companies->user_id;
+
+            $users = \App\User::find($user);
+
+            $contactpersonname = $users->name;
+            $contactpersonphone = $users->phone;
+            $contactpersonemail = $users->email;
+
+
+       // }
+
+
+
+
+        //dd($request->customer);
+
         \App\Quotations::insert([
             'sales_id'                  => 1,
             'accepted'                  => 0,
-            'companyname'               => $request->companyName,
-            'contactpersonname'         => $request->contactPerson,
-            'contactpersonemail'        => $request->contactPersonEmail,
-            'contactpersonphone'        => $request->contactPersonPhone,
-            'companyaddress'            => $request->companyAddress,
+            'company_id'               => $company_id,
+            'companyname'               => $companyname,
+            'contactpersonname'         => $contactpersonname,
+            'contactpersonemail'        => $contactpersonemail,
+            'contactpersonphone'        => $contactpersonphone,
+            'companyaddress'            => $companyaddress,
             'italian_light'             => $request->italianLight,
             'italian'                   => $request->italian,
             'italian_deluxe'            => $request->italianDeluxe,

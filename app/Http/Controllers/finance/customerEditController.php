@@ -47,8 +47,10 @@ class customerEditController extends Controller
      */
     public function show($id)
     {
+        $quotation = \App\Quotations::find($id);
+
         $company = \App\CompanyDetail::find($id);
-        return view('finance/customers/show', ['company' => $company]);
+        return view('finance/customers/show', ['company' => $company, 'quotation' => $quotation]);
     }
 
     /**
@@ -59,8 +61,10 @@ class customerEditController extends Controller
      */
     public function edit($id)
     {
+        $quotation = \App\Quotations::find($id);
+
         $company = \App\CompanyDetail::find($id);
-        return view('finance/customers/edit', ['company' => $company]);
+        return view('finance/customers/edit', ['company' => $company, 'quotation' => $quotation]);
     }
 
     /**

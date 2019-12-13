@@ -22,6 +22,15 @@
                             <input type="checkbox" name="bkr" value="bkr">
                         @endif
                     @endif
+                        <label for="description">Contract akkoord: </label>
+                        @if ($quotation->accepted == 1)
+                            <input type="checkbox" name="accepted" value="accepted" checked>
+                        @else
+                            <input type="checkbox" name="accepted" value="accepted">
+                        @endif
+
+                    <textarea name="note" placeholder="Opmerking"></textarea>
+                    <input class="centered-button" type="submit" value="Klant aanpassen">
                 </div>
                 <div class="finance-customer-form-textarea">
                     <label class="form-label" for="note">Opmerking:</label>

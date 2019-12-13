@@ -30,6 +30,7 @@ Route::resource('jobTicket', 'jobTicketController');
 Route::resource('/calendar', 'maintenance\calendarController');
 Route::resource('leases', 'LeaseController');
 Route::resource('/customerEdit', 'finance\customerEditController');
+Route::resource('/contract', 'finance\contractController');
 Route::get('/home', 'HomeController@index')->name('home');
 Route::get('customerCreate', 'customerController@create');
 //Route::get('reviewindexQuotation', 'finance\quotationreviewController@index');
