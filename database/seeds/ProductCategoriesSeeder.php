@@ -16,14 +16,14 @@ class ProductCategoriesSeeder extends Seeder
 
         //for ($i = 0; $i < 5; $i++) {
         \DB::table('supply_categories')->insert([
-                //'id'   => 1,
+                'id'   => 1,
                 'name' => 'machines',
                 'created_at' => now(),
                 'updated_at' => now()
             ]);
 
         \DB::table('supply_categories')->insert([
-            //'id'   => 2,
+            'id'   => 2,
             'name' => 'beans',
             'created_at' => now(),
             'updated_at' => now()

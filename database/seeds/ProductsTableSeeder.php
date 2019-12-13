@@ -91,31 +91,5 @@ class ProductsTableSeeder extends Seeder
             'created_at'    => now(),
             'updated_at'    => now()
         ]);
-
-
-
-
-
-
-
-
-
-
-
-        //}
-
-       /* $productCategories = \App\supplyCategory::all()->count();
-
-        for ($i = 0; $i < 25; $i++) {
-            \App\Supply::insert([
-                'name'                =>$faker->word,
-                'supply_categories_id' =>rand(1, $productCategories),
-                'price'                 =>$faker->randomFloat('2', '1', '999'),
-                'amount'                =>$faker->randomNumber('2'),
-                'created_at'            => now(),
-                'updated_at'            => now()
-            ]);
-        }*/
-
     }
 }
