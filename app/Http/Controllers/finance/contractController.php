@@ -109,7 +109,8 @@ class contractController extends Controller
         //
         //dd($id);
         //$lease_type = \App\LeaseType::all();
-        $quotations = \App\Quotations::where('accepted', 1)->get();
+        $quotations = \App\Quotations::where([['company_id', '=', $id],
+            ['accepted', '=', '1']])->get();
 
         $company = \App\CompanyDetail::find($id);
         return view('finance/contracts.show', ['company' => $company, 'quotations' => $quotations]);

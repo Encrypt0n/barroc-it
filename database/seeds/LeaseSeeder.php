@@ -17,7 +17,7 @@ class LeaseSeeder extends Seeder
         ]);
 
         \App\LeaseType::insert([
-            'type' => 3,
+            'type' => 2,
             'created_at' => now()
         ]);
 

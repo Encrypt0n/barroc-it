@@ -22,7 +22,7 @@ class APIController extends Controller
     {
         $customers = \App\User::with(['companydetail', 'companydetail.lease.invoice', 'companydetail.lease', 'companydetail.quotations' => function ($query) {
             $query->where('quotations.accepted', '=', 1);
-        }])->get();
+        }])->where('role', !1 || !2 || !3 || !4)->get();
         //$customers->companydetail = \App\Quotations::where('accepted', 0)->get();
 
         //dd($customers);
