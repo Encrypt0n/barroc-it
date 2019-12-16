@@ -35,6 +35,7 @@ class customerController extends Controller
         //
 
 
+
         return view('customer/create');
 
     }
@@ -48,12 +49,14 @@ class customerController extends Controller
     public function store(Request $request)
     {
         $contactname = $request->input('contactname');
+        $contactphone = $request->input('contactphone');
         $email = $request->input('email');
         $password = $request->input('password');
 
         \App\User::insert([
             'name' => $contactname,
             'email' => $email,
+            'phone' => $contactphone,
             'password' => Hash::make($password)
         ]);
         $user = \DB::table('users')

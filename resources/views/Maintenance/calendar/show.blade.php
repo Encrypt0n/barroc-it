@@ -44,5 +44,10 @@
                 <p>{{ $calendar->User->name }}</p>
             </div>
         </div>
+
+        <form action="{{ route('jobTicket.show', $calendar->id) }}">
+            <input type="submit" class="centered-button" value="werkbon aanmaken">
+        </form>
+
     </div>
 @endsection

@@ -53,6 +53,7 @@ class Users extends Seeder
         \App\User::insert([
             'name'          => 'Bas',
             'email'         => 'Sales@barrocit.nl',
+            'phone'      => '0612345678',
             'password'      => Hash::make('Welkom01'),
             'created_at'    => now(),
             'updated_at'    => now(),
@@ -62,6 +63,7 @@ class Users extends Seeder
         \App\User::insert([
            'name'           => 'Pieter',
            'email'          => 'Maintenance@barrocit.nl',
+            'phone'      => '0612345678',
            'password'       => Hash::make('Welkom01'),
             'created_at'    => now(),
             'updated_at'    => now(),
@@ -70,6 +72,7 @@ class Users extends Seeder
         \App\User::insert([
             'name'       => 'Xander',
             'email'      => 'Klant@barrocit.nl',
+            'phone'      => '0612345678',
             'password'   => Hash::make('Welkom01'),
             'created_at' => now(),
             'updated_at' => now(),
@@ -78,6 +81,7 @@ class Users extends Seeder
         \App\User::insert([
             'name'       => 'Pieter',
             'email'      => 'Finance@barrocit.nl',
+            'phone'      => '0612345678',
             'password'   => Hash::make('Welkom01'),
             'created_at' => now(),
             'updated_at' => now(),
@@ -87,10 +91,21 @@ class Users extends Seeder
         \App\User::insert([
             'name'       => 'Henk',
             'email'      => 'Supplies@barrocit.nl',
+            'phone'      => '0612345678',
             'password'   => Hash::make('Welkom01'),
             'created_at' => now(),
             'updated_at' => now(),
             'role'       => 4
+        ]);
+
+        \App\User::insert([
+            'name'       => 'Sales2',
+            'email'      => 'Sales2@barrocit.nl',
+            'phone'      => '0612345678',
+            'password'   => Hash::make('Welkom01'),
+            'created_at' => now(),
+            'updated_at' => now(),
+            'role'       => 1
         ]);
     }
 }

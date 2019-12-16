@@ -63,6 +63,8 @@
                     <a class="dashboard-link" href="{{ route('reviewQuotation.index') }}">Offerte overzicht</a>
                     <div class="yellow-splitter-line"></div>
                     <a class="dashboard-link" href="{{ route('customerEdit.index') }}">Klanten overzicht</a>
+                    <div class="yellow-splitter-line"></div>
+                    <a class="dashboard-link" href="{{ route('contract.index') }}">Contracten overzicht</a>
                 @endif
 
                 {{-- Maintenance--}}

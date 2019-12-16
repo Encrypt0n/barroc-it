@@ -6,6 +6,8 @@ use Illuminate\Database\Eloquent\Model;
 
 class Lease extends Model
 {
+    protected $table = 'leases';
+
     protected $fillable = ['lease_type_id', 'customer_id', 'finance_id'];
 
     public function leaseType(){
@@ -18,5 +20,9 @@ class Lease extends Model
 
     public function finance(){
         return $this->belongsTo('\App\User', 'finance_id');
+    }
+
+    public function invoice() {
+        return $this->hasOne('\App\Invoice', 'lease_id');
     }
 }

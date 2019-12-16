@@ -31,6 +31,13 @@
                         @elseif ($company->bkr == 0)
                             <p>...</p>
                         @endif
+                        <p>Contract akkoord:</p>
+                        @if ($quotation->accepted == 1)
+                            <img class="cross-check" src="{{ asset('storage/img/check.png') }}" alt="check">
+
+                        @elseif ($quotation->accepted == 0)
+                            <p>...</p>
+                        @endif
                     </div>
                 </div>
                 <div class="dashboard-detail-wrapper-splitter-item">
@@ -55,6 +62,12 @@
                 <form action="{{ route('customerEdit.edit', $company->id) }}">
                     @csrf
                     <input type="submit" class="centered-button" value="Klant aanpassen">
+                </form>
+            </div>
+            <div class="dashboard-centered-button-container">
+                <form action="{{ route('contract.show', $company->id) }}">
+                    @csrf
+                    <input type="submit" class="centered-button" value="Contract aanmaken">
                 </form>
             </div>
         </div>

@@ -35,7 +35,7 @@ class jobTicketController extends Controller
      */
     public function store(Request $request)
     {
-        dd($request);
+        return ( new \App\Mail\jobTicketMail($request) )->render();
     }
 
     /**
@@ -46,7 +46,8 @@ class jobTicketController extends Controller
      */
     public function show($id)
     {
-        //
+      $jobTicket = \App\Calendar::find($id);
+      return view('Maintenance/jobTicket/create', ['jobTicket' => $jobTicket]);
     }
 
     /**
