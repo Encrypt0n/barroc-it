@@ -14,8 +14,9 @@ class contractController extends Controller
      */
     public function index()
     {
-        //
+        $leases = \App\Lease::all();
 
+        return view('finance.contracts.index', ['leases'  => $leases]);
     }
 
     /**
