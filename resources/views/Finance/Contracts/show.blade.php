@@ -4,19 +4,10 @@
         <form action="{{ route('contract.store') }}" method="post">
             @csrf
        Lease type: <select name="lease_type">
-
-
-
             <option value="1">1 maand</option>
             <option value="2">3 maanden</option>
             <option value="3">6 maanden</option>
             <option value="4">12 maanden(in 1 keer)</option>
-
-
-
-
-
-
         </select>
 
 
@@ -43,6 +34,7 @@
 
         <input type="submit" value="Lease keuze opslaan">
         </form>
+    </div>
 
 
 
