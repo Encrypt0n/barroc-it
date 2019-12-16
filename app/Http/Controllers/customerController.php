@@ -35,6 +35,7 @@ class customerController extends Controller
         //
 
 
+
         return view('customer/create');
 
     }
@@ -47,56 +48,35 @@ class customerController extends Controller
      */
     public function store(Request $request)
     {
-        //
-
         $contactname = $request->input('contactname');
+        $contactphone = $request->input('contactphone');
         $email = $request->input('email');
         $password = $request->input('password');
 
         \App\User::insert([
             'name' => $contactname,
             'email' => $email,
+            'phone' => $contactphone,
             'password' => Hash::make($password)
-
-
         ]);
-
-
-
-
-
-
-
-
-
-
         $user = \DB::table('users')
         ->where('email', $email)
         ->first();
 
        // $user = \App\User::where('email', $email->first());
 
-
-
-
-
-
-
-
         $companyname = $request->input('companyname');
         $workemail = $request->input('workemail');
         $address = $request->input('address');
 
-        \DB::table('companydetails')->insert([
+        \DB::table('company_details')->insert([
             'name' => $companyname,
             'email' => $workemail,
             'address' => $address,
             'user_id' => $user->id
         ]);
-
-
-
-
+//        $account = array(['email' => $email, 'password' => $password]);
+        return ( new \App\Mail\RegisterMail(['email' => $email, 'password' => $password]) )->render();
     }
 
     /**

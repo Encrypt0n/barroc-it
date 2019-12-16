@@ -28,5 +28,6 @@ class CreateSupplyCategoriesTable extends Migration
     public function down()
     {
         Schema::dropIfExists('product_categories');
+        Schema::dropIfExists('supply_categories');
     }
 }

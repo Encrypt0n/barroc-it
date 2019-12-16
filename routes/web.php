@@ -23,13 +23,14 @@ Route::resource('customer', 'customerController');
 Route::resource('/reviewQuotation', 'finance\quotationreviewController');
 Route::resource('privacy', 'privacyController');
 Route::resource('supplies', 'SupplyController');
-
+Route::resource('/customerDetail', 'customer\customerDetailController');
 Route::resource('jobTicket', 'jobTicketController');
 Route::resource('/failureRequest', 'customer\failureRequestController');
 Route::resource('jobTicket', 'jobTicketController');
 Route::resource('/calendar', 'maintenance\calendarController');
 Route::resource('leases', 'LeaseController');
 Route::resource('/customerEdit', 'finance\customerEditController');
+Route::resource('/contract', 'finance\contractController');
 Route::get('/home', 'HomeController@index')->name('home');
 Route::get('customerCreate', 'customerController@create');
 //Route::get('reviewindexQuotation', 'finance\quotationreviewController@index');

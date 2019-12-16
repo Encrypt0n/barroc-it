@@ -3,7 +3,9 @@
 namespace App\Http\Controllers;
 
 use App\Lease;
+use App\LeaseType;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class LeaseController extends Controller
 {
@@ -16,8 +18,6 @@ class LeaseController extends Controller
     {
         $leases = Lease::all();
 
-
-//        dd($leases);
         return view('leases.index', ['leases' => $leases]);
     }
 
@@ -28,7 +28,10 @@ class LeaseController extends Controller
      */
     public function create()
     {
-        return view('leases.create');
+        $leaseTypes = LeaseType::all();
+        $companies = \App\CompanyDetail::all();
+
+        return view('leases.create', ['leaseTypes' => $leaseTypes, 'companies' => $companies]);
     }
 
     /**
@@ -39,7 +42,18 @@ class LeaseController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $customer = \App\User::where('');
+
+        dd($customer);
+
+//        Lease::insert([
+//            'lease_type_id'     => $request->lease_type_id,
+//            'customer_id'       => $customer
+//            'finance_id'        => Auth::id(),
+//            'created_at'        => now()
+//        ]);
+//
+//        return redirect()->action('LeaseController@index');
     }
 
     /**
