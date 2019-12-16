@@ -28,6 +28,13 @@ class ProductCategoriesSeeder extends Seeder
             'created_at' => now(),
             'updated_at' => now()
         ]);
+
+        \DB::table('supply_categories')->insert([
+            //'id'   => 2,
+            'name' => 'warehouse_supplies',
+            'created_at' => now(),
+            'updated_at' => now()
+        ]);
         //}
     }
 }

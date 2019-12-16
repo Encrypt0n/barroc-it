@@ -92,6 +92,150 @@ class ProductsTableSeeder extends Seeder
             'updated_at'    => now()
         ]);
 
+        \DB::table('supplies')->insert([
+            'name'                => 'Rubbber(10mm)',
+            'price'        => 0.39,
+            'supply_categories_id' => 3,
+            'amount'              => 440,
+            'created_at'    => now(),
+            'updated_at'    => now()
+        ]);
+
+        \DB::table('supplies')->insert([
+            'name'                => 'Rubber(14mm)',
+            'price'        => 0.45,
+            'supply_categories_id' => 3,
+            'amount'              => 440,
+            'created_at'    => now(),
+            'updated_at'    => now()
+        ]);
+
+        \DB::table('supplies')->insert([
+            'name'                => 'Slang',
+            'price'        => 4.45,
+            'supply_categories_id' => 3,
+            'amount'              => 440,
+            'created_at'    => now(),
+            'updated_at'    => now()
+        ]);
+
+        \DB::table('supplies')->insert([
+            'name'                => 'Voeding',
+            'price'        => 68.69,
+            'supply_categories_id' => 3,
+            'amount'              => 440,
+            'created_at'    => now(),
+            'updated_at'    => now()
+        ]);
+
+        \DB::table('supplies')->insert([
+            'name'                => 'Ontkalker',
+            'price'        => 4.00,
+            'supply_categories_id' => 3,
+            'amount'              => 440,
+            'created_at'    => now(),
+            'updated_at'    => now()
+        ]);
+
+        \DB::table('supplies')->insert([
+            'name'                => 'Waterfilter',
+            'price'        => 299.45,
+            'supply_categories_id' => 3,
+            'amount'              => 440,
+            'created_at'    => now(),
+            'updated_at'    => now()
+        ]);
+
+        \DB::table('supplies')->insert([
+            'name'                => 'Reservoir sensor',
+            'price'        => 89.99,
+            'supply_categories_id' => 3,
+            'amount'              => 440,
+            'created_at'    => now(),
+            'updated_at'    => now()
+        ]);
+
+        \DB::table('supplies')->insert([
+            'name'                => 'Druppelstop',
+            'price'        => 122.43,
+            'supply_categories_id' => 3,
+            'amount'              => 440,
+            'created_at'    => now(),
+            'updated_at'    => now()
+        ]);
+
+        \DB::table('supplies')->insert([
+            'name'                => 'Electrische pomp',
+            'price'        => 478.59,
+            'supply_categories_id' => 3,
+            'amount'              => 440,
+            'created_at'    => now(),
+            'updated_at'    => now()
+        ]);
+
+        \DB::table('supplies')->insert([
+            'name'                => 'Tandwiel 110mm',
+            'price'        => 5.45,
+            'supply_categories_id' => 3,
+            'amount'              => 440,
+            'created_at'    => now(),
+            'updated_at'    => now()
+        ]);
+
+        \DB::table('supplies')->insert([
+            'name'                => 'Tandwiel 70mm',
+            'price'        => 5.25,
+            'supply_categories_id' => 3,
+            'amount'              => 440,
+            'created_at'    => now(),
+            'updated_at'    => now()
+        ]);
+
+        \DB::table('supplies')->insert([
+        'name'                => 'Maalmotor',
+        'price'        => 119.20,
+        'supply_categories_id' => 3,
+        'amount'              => 440,
+        'created_at'    => now(),
+        'updated_at'    => now()
+        ]);
+
+        \DB::table('supplies')->insert([
+            'name'                => 'Zeef',
+            'price'        => 28.80,
+            'supply_categories_id' => 3,
+            'amount'              => 440,
+            'created_at'    => now(),
+            'updated_at'    => now()
+        ]);
+
+        \DB::table('supplies')->insert([
+            'name'                => 'Reinigingstabletten',
+            'price'        => 3.45,
+            'supply_categories_id' => 3,
+            'amount'              => 440,
+            'created_at'    => now(),
+            'updated_at'    => now()
+        ]);
+
+        \DB::table('supplies')->insert([
+            'name'                => 'Reiningsborsteltjes',
+            'price'        => 8.45,
+            'supply_categories_id' => 3,
+            'amount'              => 440,
+            'created_at'    => now(),
+            'updated_at'    => now()
+        ]);
+
+        \DB::table('supplies')->insert([
+            'name'                => 'Ontkalkingspijp',
+            'price'        => 21.70,
+            'supply_categories_id' => 3,
+            'amount'              => 440,
+            'created_at'    => now(),
+            'updated_at'    => now()
+        ]);
+
 
 
 

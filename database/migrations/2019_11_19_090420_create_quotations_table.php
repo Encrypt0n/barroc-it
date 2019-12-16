@@ -29,6 +29,15 @@ class CreateQuotationsTable extends Migration
             $table->integer('yellow_bourbon_brasil');
             $table->integer('espresso_roma');
             $table->integer('red_honey_honduras');
+
+//            $table->integer('Rubbber(10mm)');
+//            $table->integer('Rubber(14mm)');
+//            $table->integer('Slang');
+//            $table->integer('Voeding');
+//            $table->integer('Ontkalker');
+//            $table->integer('Waterfilter');
+//            $table->integer('Reservoir sensor');
+//            $table->integer('Druppelstop');
             $table->boolean('accepted');
             $table->timestamps();
 

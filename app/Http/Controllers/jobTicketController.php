@@ -46,7 +46,8 @@ class jobTicketController extends Controller
      */
     public function show($id)
     {
-        //
+        $jobTicket = \App\Calendar::find($id);
+        return view('maintenance/show', ['jobTicket' => $jobTicket]);
     }
 
     /**
