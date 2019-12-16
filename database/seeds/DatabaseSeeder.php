@@ -20,6 +20,7 @@ class DatabaseSeeder extends Seeder
         $this->call(ProductCategoriesSeeder::class);
         $this->call(ProductsTableSeeder::class);
         $this->call(LeaseTypesSeeder::class);
+        $this->call(LeasesSeeder::class);
         $this->call(WorkOrderSeeder::class);
 
     }
