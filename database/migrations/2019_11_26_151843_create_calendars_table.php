@@ -21,7 +21,6 @@ class CreateCalendarsTable extends Migration
             $table->date('date');
             $table->text('to_repair');
             $table->text('to_use');
-            $table->boolean('finished');
             $table->timestamps();
 
             $table->foreign('type_id')

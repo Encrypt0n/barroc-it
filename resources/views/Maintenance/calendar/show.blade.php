@@ -45,8 +45,8 @@
             </div>
         </div>
 
-        <form action="{{ route('jobTicket.show') }}">
-            <input type="submit" class="centered-button" value="Bezoek plannen">
+        <form action="{{ route('jobTicket.show', $calendar->id) }}">
+            <input type="submit" class="centered-button" value="werkbon aanmaken">
         </form>
 
     </div>

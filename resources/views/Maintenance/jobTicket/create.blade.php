@@ -2,14 +2,17 @@
 @section('content')
     <div class="dashboard-title-container">
         <div class="dashboard-title">
-            <h2><span class="title-highlighted-dash">-</span> Wekrbon invullen <span class="title-highlighted-dash">-</span> </h2>
+            <h2><span class="title-highlighted-dash">-</span> Werkbon invullen <span class="title-highlighted-dash">-</span> </h2>
         </div>
     </div>
 
     <form action="{{route('jobTicket.store')}}" method="POST">
         @csrf
     <div class="form-container">
-        <label for="">Bezoek:</label>
+        <div class="company">
+            <label for="">Bedrijf:</label>
+            <input type="text" name="companyName">
+        </div>
 
         <div class="finished">
         <label for="finished">Voltooid:</label>
