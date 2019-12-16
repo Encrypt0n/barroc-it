@@ -26,17 +26,22 @@ class LeasesSeeder extends Seeder
         ]);*/
 
         $customerCount = \App\User::where('role', 0)->count();
-        dd($customerCount);
+        //dd($customerCount);
+
+        //$customers = \App\User::where('role', 0)->get();
+        $finances = \App\User::where('role', 1)->get();
+
+            for ($i = 0; $i < 150; $i++) {
 
 
-        for ($i = 0; $i < $customerCount; $i++) {
-            \App\Lease::insert([
-                'lease_type_id' => rand(1, 4),
-                'customer_id' => rand(1, 200),
-                'finance_id' => $faker->randomDigit,
-                'monthly_costs' => $faker->randomFloat('2', 0, 999)
-            ]);
+                \App\Lease::insert([
+                    'lease_type_id' => rand(1, 4),
+                    'customer_id' => rand(1, $customerCount),
+                    'finance_id' => $finances->random()->id,
+                    'monthly_costs' => $faker->randomFloat(2, 0, 999)
+                ]);
 
-        }
+            }
+
     }
 }

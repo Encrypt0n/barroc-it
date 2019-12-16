@@ -19,10 +19,11 @@ class Users extends Seeder
             \App\User::insert([
                 'name'          => $faker->name,
                 'email'         => $faker->unique()->safeEmail,
+                'phone'         => $faker->numberBetween(1000000000, 9999999999),
                 'password'      => Hash::make('Welkom01'),
                 'created_at'    => now(),
                 'updated_at'    => now(),
-                'role'          => 3
+                'role'          => 0
             ]);
         }
 //      30 inactive customers without BKR registration
@@ -30,10 +31,11 @@ class Users extends Seeder
             \App\User::insert([
                 'name'          => $faker->name,
                 'email'         => $faker->unique()->safeEmail,
+                'phone'         => $faker->numberBetween(1000000000, 9999999999),
                 'password'      => Hash::make('Welkom01'),
                 'created_at'    => now(),
                 'updated_at'    => now(),
-                'role'          => 3
+                'role'          => 0
             ]);
         }
 //      10 inactive customers with BKR registration
@@ -41,10 +43,11 @@ class Users extends Seeder
             \App\User::insert([
                 'name'          => $faker->name,
                 'email'         => $faker->unique()->safeEmail,
+                'phone'         => $faker->numberBetween(1000000000, 9999999999),
                 'password'      => Hash::make('Welkom01'),
                 'created_at'    => now(),
                 'updated_at'    => now(),
-                'role'          => 3
+                'role'          => 0
             ]);
         }
 
@@ -105,7 +108,7 @@ class Users extends Seeder
             'password'   => Hash::make('Welkom01'),
             'created_at' => now(),
             'updated_at' => now(),
-            'role'       => 1
+            'role'       => 3
         ]);
     }
 }
