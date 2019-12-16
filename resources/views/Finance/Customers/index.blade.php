@@ -10,4 +10,7 @@
             <a class="dashboard-list-item-link" href="{{ route('customerEdit.show', $company->id) }}">{{ $company->name }}</a>
         </ul>
     @endforeach
+    <div class="list-paginate">
+        {{$companies->links()}}
+    </div>
 @endsection

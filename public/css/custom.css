@@ -550,6 +550,27 @@ main {
     border-radius: .25rem;
     margin-bottom: 20px;
 }
+.list-paginate {
+    display: flex;
+    justify-content: center;
+}
+.page-link {
+    background-color: #212121;
+    color: #ffd700;
+}
+.page-link:hover {
+    background-color: #454545;
+    color: #ffd700;
+}
+.page-item.active .page-link {
+    background-color: #ffd700;
+    border-color: #ffd700;
+    color: #212121;
+}
+.page-item.disabled .page-link {
+    background-color: #454545;
+    color: #ffd700;
+}
 /* ================================================================== */
 /*                               Maintenance                          */
 /* ================================================================== */

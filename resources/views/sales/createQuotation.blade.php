@@ -1,9 +1,13 @@
-@extends('app')
+@extends('dashboard')
 @section('content')
     <div class="container">
         <form action="{{ route('createQuotation.store') }}" method="post">
             @csrf
-            <h1>Prijsopgave aanmaken</h1>
+            <div class="dashboard-title-container">
+                <div class="dashboard-title">
+                    <h2><span class="title-highlighted-dash">-</span> Prijsopgave aanmaken <span class="title-highlighted-dash">-</span> </h2>
+                </div>
+            </div>
 
             {{--contactinformatie--}}
             <div class="contact">
@@ -97,8 +101,9 @@
             <p>*Prijzen excl btw.</p>
             <p>Totaalprijs wordt automatisch in de email gezet.</p>
 
-
-            <input type="submit" value="Prijsopgrave opsturen">
+            <div class="dashboard-centered-button-container">
+                <input class="centered-button" type="submit" value="Prijsopgrave opsturen">
+            </div>
         </form>
     </div>
 @endsection

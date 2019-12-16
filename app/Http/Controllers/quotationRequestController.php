@@ -34,6 +34,15 @@ class quotationRequestController extends Controller
      */
     public function store(Request $request)
     {
+        $this->validate($request, [
+            'companyName'         => 'required',
+            'companyAddress'      => 'required',
+            'companyPhoneNumber'  => 'required',
+            'companyEmail'        => 'required',
+            'contactPerson'       => 'required',
+            'contactPersonPhone'  => 'required',
+            'contactPersonEmail'  => 'required',
+        ]);
         return ( new \App\Mail\quotationRequestMail($request) )->render();
     }
 

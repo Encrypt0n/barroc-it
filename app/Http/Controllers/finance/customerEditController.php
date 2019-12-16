@@ -14,7 +14,7 @@ class customerEditController extends Controller
      */
     public function index()
     {
-        $companies = \App\CompanyDetail::all();
+        $companies = \App\CompanyDetail::paginate(7);
         return view('finance/customers/index', ['companies' => $companies]);
     }
 
