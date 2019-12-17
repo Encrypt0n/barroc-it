@@ -1,6 +1,6 @@
 1)
 Download de zip file van de volgende link
-https://we.tl/t-mCWrRsko3Q
+https://we.tl/t-4leSGEtKnz
 Zet de 2 mappen (fonts, img) in de volgende folder
 barroc-it -> public -> storage
 
