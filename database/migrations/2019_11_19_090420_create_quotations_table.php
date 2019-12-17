@@ -20,7 +20,7 @@ class CreateQuotationsTable extends Migration
             $table->string('companyname');
             $table->string('contactpersonname');
             $table->string('contactpersonemail');
-            $table->string('contactpersonphone');
+            $table->string('contactpersonphone')->nullable();
             $table->string('companyaddress');
             $table->integer('italian_light')->nullable();
             $table->integer('italian')->nullable();

@@ -49,7 +49,7 @@ class CompanyDetailsTableSeeder extends Seeder
 
 //      Testing company detail
         \App\CompanyDetail::insert([
-            'user_id'       => '3',
+            'user_id'       => '193',
             'name'          => 'Test Company',
             'email'         => 'testcompany@gmail.com',
             'address'       => 'teststraat 48',

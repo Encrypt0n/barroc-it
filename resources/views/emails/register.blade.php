@@ -1,5 +1,5 @@
 @component('mail::message')
-# Bestelling
+# Nieuw account
 Uw account is geregistreerd in ons systeem!<br>
 De inlog gegevens:<br>
 Email: {{ $accountInfo['email'] }}<br>

@@ -74,6 +74,8 @@
                     <a class="dashboard-link" href="{{ route('failureRequest.index') }}">Storings meldingen</a>
                     <div class="yellow-splitter-line"></div>
                     <a class="dashboard-link" href="{{ route('calendar.index') }}">Kalender</a>
+                    <div class="yellow-splitter-line"></div>
+                    <a class="dashboard-link" href="{{ route('supplies.index') }}">Producten</a>
                 @endif
 
                 {{-- Supplies--}}
