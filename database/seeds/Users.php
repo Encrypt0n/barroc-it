@@ -19,7 +19,7 @@ class Users extends Seeder
             \App\User::insert([
                 'name'          => $faker->name,
                 'email'         => $faker->unique()->safeEmail,
-                'phone'         => $faker->numberBetween(1000000000, 9999999999),
+                'phone'         => $faker->phoneNumber,
                 'password'      => Hash::make('Welkom01'),
                 'created_at'    => now(),
                 'updated_at'    => now(),
@@ -31,7 +31,7 @@ class Users extends Seeder
             \App\User::insert([
                 'name'          => $faker->name,
                 'email'         => $faker->unique()->safeEmail,
-                'phone'         => $faker->numberBetween(1000000000, 9999999999),
+                'phone'         => $faker->phoneNumber,
                 'password'      => Hash::make('Welkom01'),
                 'created_at'    => now(),
                 'updated_at'    => now(),
@@ -43,7 +43,7 @@ class Users extends Seeder
             \App\User::insert([
                 'name'          => $faker->name,
                 'email'         => $faker->unique()->safeEmail,
-                'phone'         => $faker->numberBetween(1000000000, 9999999999),
+                'phone'         => $faker->phoneNumber,
                 'password'      => Hash::make('Welkom01'),
                 'created_at'    => now(),
                 'updated_at'    => now(),
