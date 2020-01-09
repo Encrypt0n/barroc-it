@@ -96,6 +96,7 @@ class contractController extends Controller
 
 
         ]);
+        return view('/home');
     }
 
     /**

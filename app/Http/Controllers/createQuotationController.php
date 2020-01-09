@@ -41,6 +41,8 @@ class createQuotationController extends Controller
     {
        // dd($request->customer);
 
+
+
        $customer = $request->customer;
 
 

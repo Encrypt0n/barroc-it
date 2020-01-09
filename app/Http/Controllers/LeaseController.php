@@ -44,7 +44,7 @@ class LeaseController extends Controller
     {
         $customer = \App\User::where('');
 
-        dd($customer);
+        //dd($customer);
 
 //        Lease::insert([
 //            'lease_type_id'     => $request->lease_type_id,

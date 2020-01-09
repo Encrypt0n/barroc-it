@@ -23,6 +23,6 @@ class Lease extends Model
     }
 
     public function invoice() {
-        return $this->hasOne('\App\Invoice', 'lease_id');
+        return $this->hasMany('\App\Invoice', 'lease_id');
     }
 }
