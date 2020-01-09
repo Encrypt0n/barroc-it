@@ -24,5 +24,5 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 Route::get('customers', 'APIController@customers');
 Route::get('customers/{customer}/data', 'APIController@customer');
 
-Route::post('post', 'APIController@invoice_insert');
+Route::post('post', 'APIController@store');
 Route::post('post2', 'APIController@update');

@@ -65,7 +65,9 @@ class APIController extends Controller
      * @return \Illuminate\Http\Response
      */
 
-    public function invoice_insert(Request $request)
+
+
+    public function store(Request $request)
     {
         //
         $date = date('Y-m-d', strtotime($request->thing1));
@@ -73,7 +75,7 @@ class APIController extends Controller
         \DB::table('invoices')->insert([
             'lease_id'                => $request->thing0,
             'uiterlijke_betaaldatum'   => $date,
-            'betaald_op'                => $request->thing2,
+            //'betaald_op'                => $request->thing2,
 
             'prijs'                   => $request->thing3,
 
@@ -84,22 +86,6 @@ class APIController extends Controller
 
 
         ]);
-    }
-
-    public function store(Request $request)
-    {
-        //
-        \DB::table('users')->insert([
-            'name'                => $request->thing1,
-            'email'                => $request->thing2,
-            'phone'                => $request->thing3,
-            'password'            => Hash::make($request->thing4),
-            'created_at' => now(),
-            'updated_at' => now(),
-            'role'       => 1
-
-
-    ]);
     }
 
     /**
