@@ -76,6 +76,8 @@
                     <a class="dashboard-link" href="{{ route('calendar.index') }}">Kalender</a>
                     <div class="yellow-splitter-line"></div>
                     <a class="dashboard-link" href="{{ route('supplies.index') }}">Producten</a>
+                    <div class="yellow-splitter-line"></div>
+                    <a class="dashboard-link" href="{{ route('supplies.index') }}">Voorraad overzicht</a>
                 @endif
 
                 {{-- Supplies--}}
